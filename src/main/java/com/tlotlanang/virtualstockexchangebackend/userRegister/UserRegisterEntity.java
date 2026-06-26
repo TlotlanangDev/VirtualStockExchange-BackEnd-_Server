@@ -2,9 +2,8 @@ package com.tlotlanang.virtualstockexchangebackend.userRegister;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 @Entity
 @Table(name = "userDetails")
@@ -17,7 +16,7 @@ public class UserRegisterEntity {
         private UUID uuid;
         private String name;
         private String surName;
-        private Date dateOfBirth;
+        private LocalDate dateOfBirth;
         private Integer phoneNumber;
         private String emailAddress;
         private String passWord;

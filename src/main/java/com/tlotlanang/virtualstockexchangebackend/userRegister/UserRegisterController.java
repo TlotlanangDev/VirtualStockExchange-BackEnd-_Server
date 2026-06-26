@@ -9,9 +9,10 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 @RestController
 @RequestMapping("api/v1/users")
-public class UsersController {
+public class UserRegisterController {
     @Autowired
     public UserRegisterService userRegisterService;
+
     @PostMapping
     private ResponseEntity<UsersDto> createUser(@RequestBody UsersDto usersdto){
 
