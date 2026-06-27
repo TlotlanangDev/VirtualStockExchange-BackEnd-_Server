@@ -1,5 +1,6 @@
 package com.tlotlanang.virtualstockexchangebackend.userRegister;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +15,7 @@ public class UserRegisterController {
     public UserRegisterService userRegisterService;
 
     @PostMapping
-    private ResponseEntity<UsersDto> createUser(@RequestBody UsersDto usersdto){
+    private ResponseEntity<UsersDto> createUser(@Valid @RequestBody UsersDto usersdto){
 
         UsersDto saved = userRegisterService.dtoConverter(usersdto);
         return new ResponseEntity<>(saved, HttpStatus.CREATED);
