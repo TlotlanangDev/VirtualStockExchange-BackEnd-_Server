@@ -23,9 +23,7 @@ public class UserRegisterEntity {
         private String surName;
         @Past
         private LocalDate dateOfBirth;
-        @Min(10)
-        @Max(10)
-        @Positive
+        @Pattern(regexp = "^(?:\\+27|0)[1-8][0-9]{8}$\n", message = "Please Enter Correct Phone Number")
         private Integer phoneNumber;
         @NotBlank(message = "emailAddress Cannot be Empty..")
         @Email(message = "Please Enter correct Email")
