@@ -1,26 +1,31 @@
 package com.tlotlanang.virtualstockexchangebackend.userRegister;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.*;
+import org.aspectj.bridge.IMessage;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.UUID;
 public record UsersDto(
          UUID Id,
-         @NotBlank(message = "Name cannot be Empty..")
+         @NotBlank(message = "Please Enter your Name.")
+         @Size(min = 2, max = 50, message = "name must be between 2 & 50 characters.")
          String name,
-         @NotBlank(message = "surName cannot be Empty..")
+         @NotBlank(message = "Please Enter your surName.")
+         @Size(min = 2, max = 50, message = "surname must be between 2 & 50 characters.")
          String surName,
-         @Past
+         @NotNull(message = "Please Enter Date of Birth.")
+         @Past(message = "Enter Correct Date of Birth.")
+         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
          LocalDate dateOfBirth,
-         @Min(10)
-         @Max(10)
-         @Positive
-         Integer phoneNumber,
-         @NotBlank(message = "email Address cannot be Empty..")
+         @Pattern(regexp = "^(\\+27|0)[1-9][0-9\\s\\-]{8,}$",
+                 message = "Please Enter Correct Phone Number")
+         String phoneNumber,
+         @Size(min = 5, max = 50, message = "Email Address must be between 5 & 50 characters.")
+         @Email(message = "Please Enter valid Email Address.")
+         @NotBlank(message = "Please Enter Email address.")
          String emailAddress,
+         @Size(min = 8, max = 40, message = "Passowrd should have at least 8 characters.")
          @NotBlank(message = "passWord cannot be Empty..")
-         String passWord,
-         @NotBlank(message = "physical Address cannot be Empty..")
-         String physicalAddress) {}
+         String passWord) {}

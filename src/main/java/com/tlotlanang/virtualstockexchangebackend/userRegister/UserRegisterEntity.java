@@ -17,19 +17,11 @@ public class UserRegisterEntity {
         @GeneratedValue
         @UuidGenerator
         private UUID uuid;
-        @NotBlank(message = "Name Cannot be Empty..")
         private String name;
-        @NotBlank(message = "surName Cannot be Empty..")
         private String surName;
-        @Past
         private LocalDate dateOfBirth;
-        @Pattern(regexp = "^(?:\\+27|0)[1-8][0-9]{8}$\n", message = "Please Enter Correct Phone Number")
-        private Integer phoneNumber;
-        @NotBlank(message = "emailAddress Cannot be Empty..")
-        @Email(message = "Please Enter correct Email")
+        private String phoneNumber;
         private String emailAddress;
-        @NotBlank(message = "passWord Cannot be Empty..")
         private String passWord;
-        @NotBlank(message = "physicalAddress Cannot be Empty..")
-        private String physicalAddress;
+
 }
