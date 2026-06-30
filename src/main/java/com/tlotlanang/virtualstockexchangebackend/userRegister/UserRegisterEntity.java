@@ -1,7 +1,6 @@
 package com.tlotlanang.virtualstockexchangebackend.userRegister;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
 import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 import java.time.LocalDate;

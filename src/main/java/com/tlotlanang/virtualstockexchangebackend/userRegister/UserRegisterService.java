@@ -8,14 +8,14 @@ import org.springframework.stereotype.Service;
 public class UserRegisterService {
 
     @Autowired
-    private userRegisterRepository userregisterrepository;
+    private UserRegisterRepository userregisterrepository;
     @Autowired
     private UserRegisterMapper userRegisterMapper;
 
     @Transactional
-    public UsersDto dtoConverter(UsersDto usersDto){
+    public UserRegisterDto dtoConverter(UserRegisterDto userRegisterDto){
 
-        UserRegisterEntity userRegisterEntity = userRegisterMapper.toEntity(usersDto);
+        UserRegisterEntity userRegisterEntity = userRegisterMapper.toEntity(userRegisterDto);
         UserRegisterEntity savedToEntity = userregisterrepository.save(userRegisterEntity);
 
         return userRegisterMapper.toDto(savedToEntity);

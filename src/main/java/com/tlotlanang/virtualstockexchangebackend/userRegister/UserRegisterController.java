@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.*;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 @RestController
-@RequestMapping("api/v1/users")
+@RequestMapping("api/v1/stockExchange/userRegister")
 public class UserRegisterController {
     @Autowired
     public UserRegisterService userRegisterService;
 
     @PostMapping
-    private ResponseEntity<UsersDto> createUser(@Valid @RequestBody UsersDto usersdto){
+    private ResponseEntity<UserRegisterDto> createUser(@Valid @RequestBody UserRegisterDto usersdto){
 
-        UsersDto saved = userRegisterService.dtoConverter(usersdto);
+        UserRegisterDto saved = userRegisterService.dtoConverter(usersdto);
         return new ResponseEntity<>(saved, HttpStatus.CREATED);
     }
 

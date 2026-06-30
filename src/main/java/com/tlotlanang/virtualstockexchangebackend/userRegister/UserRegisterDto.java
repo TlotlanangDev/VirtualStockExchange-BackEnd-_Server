@@ -3,11 +3,10 @@ package com.tlotlanang.virtualstockexchangebackend.userRegister;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.*;
-import org.aspectj.bridge.IMessage;
 
 import java.time.LocalDate;
 import java.util.UUID;
-public record UsersDto(
+public record UserRegisterDto(
          UUID Id,
          @NotBlank(message = "Please Enter your Name.")
          @Size(min = 2, max = 50, message = "name must be between 2 & 50 characters.")
