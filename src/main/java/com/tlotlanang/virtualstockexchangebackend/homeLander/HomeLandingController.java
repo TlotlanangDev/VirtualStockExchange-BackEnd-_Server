@@ -12,10 +12,12 @@ public class HomeLandingController {
     @Autowired
     public HomelandingService homelandingService;
 
-    @GetMapping
+    /*@GetMapping
     private ResponseEntity<HomeLandingDto>requestHomeLinks(HomeLandingDto homeLandingDto){
 
         return new ResponseEntity<>();
     }
+
+     */
 
 }

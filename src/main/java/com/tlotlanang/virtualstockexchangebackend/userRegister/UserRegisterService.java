@@ -4,6 +4,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class UserRegisterService {
 
@@ -13,7 +15,7 @@ public class UserRegisterService {
     private UserRegisterMapper userRegisterMapper;
 
     @Transactional
-    public UserRegisterDto dtoConverter(UserRegisterDto userRegisterDto){
+    public UserRegisterDto dtoConverter(UUID uuid, UserRegisterDto userRegisterDto){
 
         UserRegisterEntity userRegisterEntity = userRegisterMapper.toEntity(userRegisterDto);
         UserRegisterEntity savedToEntity = userregisterrepository.save(userRegisterEntity);

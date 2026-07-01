@@ -2,11 +2,15 @@ package com.tlotlanang.virtualstockexchangebackend.userRegister;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @RequestMapping("api/v1/stockExchange/userRegister")
@@ -14,11 +18,15 @@ public class UserRegisterController {
     @Autowired
     public UserRegisterService userRegisterService;
 
-    @PostMapping
-    private ResponseEntity<UserRegisterDto> createUser(@Valid @RequestBody UserRegisterDto usersdto){
 
-        UserRegisterDto saved = userRegisterService.dtoConverter(usersdto);
-        return new ResponseEntity<>(saved, HttpStatus.CREATED);
+    @PostMapping("/{uuid}")
+    public ResponseEntity<EntityModel<UserRegisterDto>> createUser(@PathVariable UUID uuid, @Valid  @RequestBody UserRegisterDto usersdto){
+        UserRegisterDto saved = userRegisterService.dtoConverter(uuid,usersdto);
+
+        var registerlink = linkTo(methodOn(UserRegisterController.class).createUser(uuid, usersdto)).withSelfRel();
+        EntityModel<UserRegisterDto> responseModel = EntityModel.of(saved, registerlink);
+
+        return new ResponseEntity<>(responseModel, HttpStatus.CREATED);
     }
 
 
