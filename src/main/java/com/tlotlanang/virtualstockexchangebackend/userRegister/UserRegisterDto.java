@@ -3,9 +3,11 @@ package com.tlotlanang.virtualstockexchangebackend.userRegister;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.*;
+import lombok.Builder;
 
 import java.time.LocalDate;
 import java.util.UUID;
+@Builder
 public record UserRegisterDto(
          UUID Id,
          @NotBlank(message = "Please Enter your Name.")
@@ -16,7 +18,6 @@ public record UserRegisterDto(
          String surName,
          @NotNull(message = "Please Enter Date of Birth.")
          @Past(message = "Enter Correct Date of Birth.")
-         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
          LocalDate dateOfBirth,
          @Pattern(regexp = "^(\\+27|0)[1-9][0-9\\s\\-]{8,}$",
                  message = "Please Enter Correct Phone Number")
