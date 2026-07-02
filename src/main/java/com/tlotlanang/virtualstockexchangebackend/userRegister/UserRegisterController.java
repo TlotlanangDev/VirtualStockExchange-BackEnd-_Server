@@ -19,11 +19,11 @@ public class UserRegisterController {
     public UserRegisterService userRegisterService;
 
 
-    @PostMapping("/{uuid}")
-    public ResponseEntity<EntityModel<UserRegisterDto>> createUser(@PathVariable UUID uuid, @Valid  @RequestBody UserRegisterDto usersdto){
-        UserRegisterDto saved = userRegisterService.dtoConverter(uuid,usersdto);
+    @PostMapping
+    public ResponseEntity<EntityModel<UserRegisterDto>> createUser(@Valid @RequestBody UserRegisterDto usersdto){
+        UserRegisterDto saved = userRegisterService.dtoConverter(usersdto);
 
-        var registerlink = linkTo(methodOn(UserRegisterController.class).createUser(uuid, usersdto)).withSelfRel();
+        var registerlink = linkTo(methodOn(UserRegisterController.class).createUser(usersdto)).withSelfRel();
         EntityModel<UserRegisterDto> responseModel = EntityModel.of(saved, registerlink);
 
         return new ResponseEntity<>(responseModel, HttpStatus.CREATED);

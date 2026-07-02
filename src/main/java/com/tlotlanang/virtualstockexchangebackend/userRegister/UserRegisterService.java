@@ -15,7 +15,7 @@ public class UserRegisterService {
     private UserRegisterMapper userRegisterMapper;
 
     @Transactional
-    public UserRegisterDto dtoConverter(UUID uuid, UserRegisterDto userRegisterDto){
+    public UserRegisterDto dtoConverter(UserRegisterDto userRegisterDto){
 
         UserRegisterEntity userRegisterEntity = userRegisterMapper.toEntity(userRegisterDto);
         UserRegisterEntity savedToEntity = userregisterrepository.save(userRegisterEntity);

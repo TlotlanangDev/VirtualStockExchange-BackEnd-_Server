@@ -28,7 +28,7 @@ class UserRegisterRepositoryTest {
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
-                .dateOfBirth(LocalDate.of(2002,9,01))
+                .dateOfBirth(LocalDate.of(2002,9,1))
                 .phoneNumber("0787060708")
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();

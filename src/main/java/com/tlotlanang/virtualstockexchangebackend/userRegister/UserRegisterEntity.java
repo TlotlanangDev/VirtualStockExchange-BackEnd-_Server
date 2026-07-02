@@ -9,6 +9,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "userDetails")
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserRegisterEntity {

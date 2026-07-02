@@ -19,18 +19,25 @@ repositories {
 }
 
 dependencies {
+
+    compileOnly 'org.projectlombok:lombok:latest.release'
+    developmentOnly 'org.springframework.boot:spring-boot-h2console'
     implementation 'org.springframework.boot:spring-boot-starter-webmvc'
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation "org.mapstruct:mapstruct:1.6.3"
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    testRuntimeOnly 'com.h2database:h2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    compileOnly 'org.projectlombok:lombok:latest.release'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    developmentOnly 'org.springframework.boot:spring-boot-h2console'
+
     annotationProcessor 'org.projectlombok:lombok:latest.release'
     annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
-    implementation "org.mapstruct:mapstruct:1.6.3"
     annotationProcessor "org.mapstruct:mapstruct-processor:1.6.3"
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
 
 
 }
