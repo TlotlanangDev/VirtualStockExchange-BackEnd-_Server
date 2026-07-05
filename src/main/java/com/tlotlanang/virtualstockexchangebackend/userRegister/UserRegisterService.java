@@ -4,22 +4,26 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
 
 @Service
-public class UserRegisterService {
+public class UserRegisterService implements RegisterUserService{
 
     @Autowired
     private UserRegisterRepository userregisterrepository;
-    @Autowired
-    private UserRegisterMapper userRegisterMapper;
 
-    @Transactional
-    public UserRegisterDto dtoConverter(UserRegisterDto userRegisterDto){
+    @Override
+    public UserRegisterEntity createUser(UserRegisterRequest userRegisterRequest) {
 
-        UserRegisterEntity userRegisterEntity = userRegisterMapper.toEntity(userRegisterDto);
-        UserRegisterEntity savedToEntity = userregisterrepository.save(userRegisterEntity);
-
-        return userRegisterMapper.toDto(savedToEntity);
+        UserRegisterEntity userRegisterEntity = new UserRegisterEntity(
+                null,
+                userRegisterRequest.name(),
+                userRegisterRequest.surName(),
+                userRegisterRequest.dateOfBirth(),
+                userRegisterRequest.phoneNumber(),
+                userRegisterRequest.emailAddress(),
+                userRegisterRequest.passWord()
+        );
+        return userregisterrepository.save(userRegisterEntity);
     }
+
 }
