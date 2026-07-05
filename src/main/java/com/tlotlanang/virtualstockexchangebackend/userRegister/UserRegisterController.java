@@ -16,17 +16,19 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @RequestMapping("api/v1/stockExchange/userRegister")
 public class UserRegisterController {
     @Autowired
-    public UserRegisterService userRegisterService;
+    public RegisterUserService registerUserService;
+
+    @Autowired
+    public UserRegisterMapper userRegisterMapper;
 
 
     @PostMapping
-    public ResponseEntity<EntityModel<UserRegisterDto>> createUser(@Valid @RequestBody UserRegisterDto usersdto){
-        UserRegisterDto saved = userRegisterService.dtoConverter(usersdto);
+    public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserRegisterDto userRegisterDto){
+        UserRegisterRequest userRegisterRequest = userRegisterMapper.fromDto(userRegisterDto);
+        UserRegisterEntity userRegisterEntity = registerUserService.createUser(userRegisterRequest);
+        UserDto userDto = userRegisterMapper.toDto(userRegisterEntity);
 
-        var registerlink = linkTo(methodOn(UserRegisterController.class).createUser(usersdto)).withSelfRel();
-        EntityModel<UserRegisterDto> responseModel = EntityModel.of(saved, registerlink);
-
-        return new ResponseEntity<>(responseModel, HttpStatus.CREATED);
+        return new ResponseEntity<>(userDto, HttpStatus.CREATED);
     }
 
 
