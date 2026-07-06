@@ -1,5 +1,9 @@
-package com.tlotlanang.virtualstockexchangebackend.userRegister;
+package com.tlotlanang.virtualstockexchangebackend.userRegister.mapper;
 
+import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserRegisterResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserRegisterDto;
+import com.tlotlanang.virtualstockexchangebackend.userRegister.entity.UserRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserRegisterRequest;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,15 +20,15 @@ public class UserMapperImpl implements UserRegisterMapper{
     }
 
     @Override
-    public UserDto toDto(UserRegisterEntity userRegisterEntity) {
-        return new UserDto(
+    public UserRegisterResponseDto toDto(UserRegisterEntity userRegisterEntity) {
+        return new UserRegisterResponseDto(
                 userRegisterEntity.getUuid(),
                 userRegisterEntity.getName(),
                 userRegisterEntity.getSurName(),
                 userRegisterEntity.getDateOfBirth(),
                 userRegisterEntity.getPhoneNumber(),
-                userRegisterEntity.getEmailAddress(),
-                userRegisterEntity.getPassWord()
+                userRegisterEntity.getEmailAddress()
+                //userRegisterEntity.getPassWord()
         );
     }
 }

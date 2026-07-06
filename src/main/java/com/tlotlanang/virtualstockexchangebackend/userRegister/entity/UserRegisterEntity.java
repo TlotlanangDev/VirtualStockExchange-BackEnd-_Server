@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.userRegister;
+package com.tlotlanang.virtualstockexchangebackend.userRegister.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
-@Table(name = "userDetails")
+@Table(name = "UserInfo")
 @Data
 @Builder
 @NoArgsConstructor

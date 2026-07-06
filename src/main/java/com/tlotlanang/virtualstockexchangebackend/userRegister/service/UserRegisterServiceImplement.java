@@ -1,12 +1,14 @@
-package com.tlotlanang.virtualstockexchangebackend.userRegister;
+package com.tlotlanang.virtualstockexchangebackend.userRegister.service;
 
-import jakarta.transaction.Transactional;
+import com.tlotlanang.virtualstockexchangebackend.userRegister.entity.UserRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.userRegister.repository.UserRegisterRepository;
+import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserRegisterRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
-public class UserRegisterService implements RegisterUserService{
+public class UserRegisterServiceImplement implements UserRegisterService {
 
     @Autowired
     private UserRegisterRepository userregisterrepository;

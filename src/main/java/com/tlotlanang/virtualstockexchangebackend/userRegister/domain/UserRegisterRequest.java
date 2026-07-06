@@ -1,4 +1,6 @@
-package com.tlotlanang.virtualstockexchangebackend.userRegister;
+package com.tlotlanang.virtualstockexchangebackend.userRegister.domain;
+
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
