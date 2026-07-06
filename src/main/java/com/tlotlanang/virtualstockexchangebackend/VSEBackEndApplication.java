@@ -6,11 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.hateoas.config.EnableHypermediaSupport;
 
 @SpringBootApplication
-
-public class VirtualStockExchangeBackEndApplication {
+@Configuration
+@EnableHypermediaSupport(type = EnableHypermediaSupport.HypermediaType.UBER)
+public class VSEBackEndApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(VirtualStockExchangeBackEndApplication.class, args);
+        SpringApplication.run(VSEBackEndApplication.class, args);
     }
 
 }
