@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 
@@ -28,13 +29,48 @@ class UserRegisterDtoTest {
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2002,9,1))
-                .phoneNumber("0787060708")
+                .phoneNumber("0787058697")
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
         Set<ConstraintViolation<UserRegisterDto>> violations = validation.validate(userRegisterDto);
 
+        List<String> failedProperties = violations.stream()
+                .map(violation -> violation.getPropertyPath().toString())
+                .toList();
+
         Assertions.assertThat(violations).isEmpty();
+        Assertions.assertThat(violations.size()).isEqualTo(0);
+        
+
+
+    }
+
+    @Test
+    public void setUserRegisterDto_passInValidInfo_returnData(){
+        UserRegisterDto userRegisterDto = UserRegisterDto.builder()
+
+                .name("d")
+                .surName("s")
+                .dateOfBirth(LocalDate.of(2032,9,1))
+                .phoneNumber("fd0787058697")
+                .emailAddress("Tlotlananggmailcom")
+                .passWord("").build();
+
+        Set<ConstraintViolation<UserRegisterDto>> violations = validation.validate(userRegisterDto);
+
+        List<String> failedProperties = violations.stream()
+                .map(violation -> violation.getPropertyPath().toString())
+                .toList();
+
+        Assertions.assertThat(violations).isNotEmpty();
+        Assertions.assertThat(failedProperties).contains("name",
+                "surName",
+                "dateOfBirth",
+                "phoneNumber",
+                "emailAddress",
+                "passWord");
+
 
     }
 
