@@ -1,8 +1,8 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Broker.service;
+package com.tlotlanang.virtualstockexchangebackend.User.Investor.service;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.repository.BrokerRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.entity.InvestorEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.repository.InvestorRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,19 +13,20 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
 
-@ExtendWith(MockitoExtension .class)
-class BrokerServiceImplementTest {
+
+@ExtendWith(MockitoExtension.class)
+class InvestorServiceImplementTest {
 
     @Mock
-    private BrokerRepository brokerRepository;
+    private InvestorRepository investorRepository;
 
     @InjectMocks
-    private BrokerServiceImplement brokerServiceImplement;
+    private InvestorServiceImplement investorServiceImplement;
 
     @Test
     public void testSaveToRepository(){
 
-        BrokerEntity brokerEntity= BrokerEntity.builder()
+        InvestorEntity investorEntity= InvestorEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -34,7 +35,7 @@ class BrokerServiceImplementTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        BrokerRequest brokerRequest = BrokerRequest.builder()
+        InvestorRequest investorRequest = InvestorRequest.builder()
                 //.Id(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -44,10 +45,10 @@ class BrokerServiceImplementTest {
                 .passWord("ergdg43gr").build();
 
 
-        Mockito.when(brokerRepository.save(Mockito.any(BrokerEntity.class)))
-                .thenReturn(brokerEntity);
+        Mockito.when(investorRepository.save(Mockito.any(InvestorEntity.class)))
+                .thenReturn(investorEntity);
 
-        BrokerEntity savedRepository = brokerServiceImplement.createUser(brokerRequest);
+        InvestorEntity savedRepository = investorServiceImplement.createUser(investorRequest);
 
         Assertions.assertThat(savedRepository).isNotNull();
         Assertions.assertThat(savedRepository.getUuid()).isNull();
@@ -59,6 +60,5 @@ class BrokerServiceImplementTest {
         Assertions.assertThat(savedRepository.getPassWord()).isEqualTo("ergdg43gr").isNotNull();
 
     }
-
 
 }

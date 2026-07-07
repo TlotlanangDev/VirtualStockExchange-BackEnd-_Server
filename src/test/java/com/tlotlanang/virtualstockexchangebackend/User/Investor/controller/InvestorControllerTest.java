@@ -1,13 +1,11 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Broker.controller;
+package com.tlotlanang.virtualstockexchangebackend.User.Investor.controller;
 
-
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerDto;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.mapper.BrokerMapper;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.service.BrokerServiceImplement;
-
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.entity.InvestorEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.mapper.InvestorMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.service.InvestorServiceImplement;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
@@ -25,30 +23,31 @@ import tools.jackson.databind.ObjectMapper;
 
 import java.time.LocalDate;
 
+
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
-@WebMvcTest(controllers = BrokerController.class)
+@WebMvcTest(controllers = InvestorController.class)
 @AutoConfigureMockMvc(addFilters = false)
 @ExtendWith(MockitoExtension.class)
-class BrokerControllerTest {
+class InvestorControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @MockitoBean
-    private BrokerMapper brokerMapper;
+    private InvestorMapper investorMapper;
 
     @Autowired
     private ObjectMapper objectMapper;
 
     @MockitoBean
-    private BrokerServiceImplement brokerServiceImplement;
+    private InvestorServiceImplement investorServiceImplement;
 
     @Test
-    void BrokerController_createUser_ReturnCreatedStatus() throws Exception {
+    void InvestorController_createUser_ReturnCreatedStatus() throws Exception {
 
-        BrokerDto brokerDto = BrokerDto.builder()
+        InvestorDto investorDto = InvestorDto.builder()
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2002, 9, 1))
@@ -57,7 +56,7 @@ class BrokerControllerTest {
                 .passWord("ergdg43gr")
                 .build();
 
-        BrokerResponseDto expectedResponse = BrokerResponseDto.builder()
+        InvestorResponseDto expectedResponse = InvestorResponseDto.builder()
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2004,9,6))
@@ -65,20 +64,20 @@ class BrokerControllerTest {
                 .emailAddress("fdgdg")
                 .build();
 
-        given(brokerMapper.fromDto(ArgumentMatchers.any(BrokerDto.class)))
-                .willReturn(new BrokerRequest("Thabo", "gman",
+        given(investorMapper.fromDto(ArgumentMatchers.any(InvestorDto.class)))
+                .willReturn(new InvestorRequest("Thabo", "gman",
                         LocalDate.of(2004,9,7), "0797978797",
                         "dgdgd@gmail.com", "vdsfvs"));
 
-        given(brokerServiceImplement.createUser(ArgumentMatchers.any(BrokerRequest.class)))
-                .willReturn(new BrokerEntity());
+        given(investorServiceImplement.createUser(ArgumentMatchers.any(InvestorRequest.class)))
+                .willReturn(new InvestorEntity());
 
-        given(brokerMapper.toDto(ArgumentMatchers.any(BrokerEntity.class)))
+        given(investorMapper.toDto(ArgumentMatchers.any(InvestorEntity.class)))
                 .willReturn(expectedResponse);
 
-        ResultActions response = mockMvc.perform(post("/api/v1/stockExchange/broker/register")
+        ResultActions response = mockMvc.perform(post("/api/v1/stockExchange/broker/investor")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(brokerDto)));
+                .content(objectMapper.writeValueAsString(investorDto)));
 
         response.andExpect(MockMvcResultMatchers.status().isCreated()).andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name",
