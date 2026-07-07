@@ -7,8 +7,7 @@ import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRespo
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerEntity;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.mapper.BrokerMapper;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.service.BrokerServiceImplement;
-import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserDto;
-import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserRegisterResponseDto;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
@@ -49,7 +48,7 @@ class BrokerControllerTest {
     @Test
     void BrokerController_createUser_ReturnCreatedStatus() throws Exception {
 
-        UserDto userDto = UserDto.builder()
+        BrokerDto userDto = BrokerDto.builder()
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2002, 9, 1))

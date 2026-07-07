@@ -1,6 +1,5 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Broker.entity;
 
-import com.tlotlanang.virtualstockexchangebackend.userRegister.entity.UserRegisterEntity;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -13,7 +12,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class BrokerEntityTest {
 

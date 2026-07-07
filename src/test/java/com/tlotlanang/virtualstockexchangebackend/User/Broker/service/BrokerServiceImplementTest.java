@@ -3,8 +3,6 @@ package com.tlotlanang.virtualstockexchangebackend.User.Broker.service;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRequest;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerEntity;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.repository.BrokerRepository;
-import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.userRegister.entity.UserRegisterEntity;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
