@@ -1,6 +1,6 @@
-package com.tlotlanang.virtualstockexchangebackend.userRegister.entity;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.entity;
 
-import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserRegisterDto;
+import com.tlotlanang.virtualstockexchangebackend.userRegister.entity.UserRegisterEntity;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -15,7 +15,7 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class UserRegisterEntityTest {
+class BrokerEntityTest {
 
     private Validator validation;
     @BeforeEach
@@ -25,8 +25,8 @@ class UserRegisterEntityTest {
     }
 
     @Test
-    public void setUseRegisterEntity_passValidInfo_returnDataPassed(){
-        UserRegisterEntity userRegisterEntity = UserRegisterEntity.builder()
+    public void setBrokerEntity_passValidInfo_returnDataPassed(){
+        BrokerEntity brokerEntity = BrokerEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -35,7 +35,7 @@ class UserRegisterEntityTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        Set<ConstraintViolation<UserRegisterEntity>> violations = validation.validate(userRegisterEntity);
+        Set<ConstraintViolation<BrokerEntity>> violations = validation.validate(brokerEntity);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
@@ -47,8 +47,8 @@ class UserRegisterEntityTest {
     }
 
     @Test
-    public void setUserRegisterEntity_passInValidInfo_returnData(){
-        UserRegisterEntity userRegisterEntity = UserRegisterEntity.builder()
+    public void setBrokerEntity_passInValidInfo_returnData(){
+        BrokerEntity brokerEntity = BrokerEntity.builder()
 
                 .name("d")
                 .surName("s")
@@ -57,7 +57,7 @@ class UserRegisterEntityTest {
                 .emailAddress("Tlotlananggmailcom")
                 .passWord("").build();
 
-        Set<ConstraintViolation<UserRegisterEntity>> violations = validation.validate(userRegisterEntity);
+        Set<ConstraintViolation<BrokerEntity>> violations = validation.validate(brokerEntity);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())

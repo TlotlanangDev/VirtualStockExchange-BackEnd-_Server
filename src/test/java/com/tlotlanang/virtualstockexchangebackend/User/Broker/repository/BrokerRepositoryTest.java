@@ -1,9 +1,8 @@
-package com.tlotlanang.virtualstockexchangebackend.userRegister.repository;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.repository;
 
-
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerEntity;
 import com.tlotlanang.virtualstockexchangebackend.userRegister.entity.UserRegisterEntity;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
@@ -12,20 +11,17 @@ import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureTestDatabas
 
 import java.time.LocalDate;
 
-
-
 @DataJpaTest
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
-class UserRegisterRepositoryTest {
+class BrokerRepositoryTest {
 
     @Autowired
-    private UserRegisterRepository userregisterrepository;
-
+    private BrokerRepository brokerRepository;
 
     @Test
-    public void setUserRegisterRepository_Save_ReturnSavedUser(){
+    public void setBrokerRepository_Save_ReturnSavedUser(){
 
-        UserRegisterEntity userRegisterEntity= UserRegisterEntity.builder()
+        BrokerEntity brokerEntity= BrokerEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -34,7 +30,7 @@ class UserRegisterRepositoryTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        UserRegisterEntity savedToEntity = userregisterrepository.save(userRegisterEntity);
+        BrokerEntity savedToEntity = brokerRepository.save(brokerEntity);
 
         Assertions.assertThat(savedToEntity).isNotNull();
         Assertions.assertThat(savedToEntity.getUuid()).isNotNull();
@@ -49,6 +45,4 @@ class UserRegisterRepositoryTest {
 
     }
 
-
 }
-

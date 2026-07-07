@@ -1,5 +1,6 @@
-package com.tlotlanang.virtualstockexchangebackend.userRegister.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.domain;
 
+import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserDto;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -12,8 +13,9 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.*;
 
-class UserRegisterDtoTest {
+class BrokerDtoTest {
 
     private Validator validation;
     @BeforeEach
@@ -23,8 +25,8 @@ class UserRegisterDtoTest {
     }
 
     @Test
-    public void setUserRegisterDto_passValidInfo_returnDataPassed(){
-        UserRegisterDto userRegisterDto = UserRegisterDto.builder()
+    public void setBrokerDto_passValidInfo_returnDataPassed(){
+        BrokerDto brokerDto = BrokerDto.builder()
 
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -33,7 +35,7 @@ class UserRegisterDtoTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        Set<ConstraintViolation<UserRegisterDto>> violations = validation.validate(userRegisterDto);
+        Set<ConstraintViolation<BrokerDto>> violations = validation.validate(brokerDto);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
@@ -41,14 +43,14 @@ class UserRegisterDtoTest {
 
         Assertions.assertThat(violations).isEmpty();
         Assertions.assertThat(violations.size()).isEqualTo(0);
-        
+
 
 
     }
 
     @Test
-    public void setUserRegisterDto_passInValidInfo_returnData(){
-        UserRegisterDto userRegisterDto = UserRegisterDto.builder()
+    public void setBrokerDto_passInValidInfo_returnData(){
+        BrokerDto brokerDto = BrokerDto.builder()
 
                 .name("d")
                 .surName("s")
@@ -57,7 +59,7 @@ class UserRegisterDtoTest {
                 .emailAddress("Tlotlananggmailcom")
                 .passWord("").build();
 
-        Set<ConstraintViolation<UserRegisterDto>> violations = validation.validate(userRegisterDto);
+        Set<ConstraintViolation<BrokerDto>> violations = validation.validate(brokerDto);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())

@@ -1,12 +1,14 @@
-package com.tlotlanang.virtualstockexchangebackend.userRegister.controller;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.controller;
 
-import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserRegisterDto;
-import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserRegisterRequest;
+
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.mapper.BrokerMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.service.BrokerServiceImplement;
+import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserDto;
 import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserRegisterResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.userRegister.entity.UserRegisterEntity;
-import com.tlotlanang.virtualstockexchangebackend.userRegister.mapper.UserRegisterMapper;
-import com.tlotlanang.virtualstockexchangebackend.userRegister.service.UserRegisterServiceImplement;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
@@ -21,31 +23,33 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import tools.jackson.databind.ObjectMapper;
+
 import java.time.LocalDate;
+
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
-@WebMvcTest(controllers = UserRegisterController.class)
+@WebMvcTest(controllers = BrokerController.class)
 @AutoConfigureMockMvc(addFilters = false)
 @ExtendWith(MockitoExtension.class)
-class UserRegisterControllerTest {
+class BrokerControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @MockitoBean
-    private UserRegisterMapper userRegisterMapper;
+    private BrokerMapper brokerMapper;
 
     @Autowired
     private ObjectMapper objectMapper;
 
     @MockitoBean
-    private UserRegisterServiceImplement userRegisterService;
+    private BrokerServiceImplement brokerServiceImplement;
 
     @Test
-    void UserRegisterController_createUser_ReturnCreatedStatus() throws Exception {
+    void BrokerController_createUser_ReturnCreatedStatus() throws Exception {
 
-        UserRegisterDto userRegisterDto = UserRegisterDto.builder()
+        UserDto userDto = UserDto.builder()
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2002, 9, 1))
@@ -54,7 +58,7 @@ class UserRegisterControllerTest {
                 .passWord("ergdg43gr")
                 .build();
 
-        UserRegisterResponseDto expectedResponse = UserRegisterResponseDto.builder()
+        BrokerResponseDto expectedResponse = BrokerResponseDto.builder()
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2004,9,6))
@@ -62,20 +66,20 @@ class UserRegisterControllerTest {
                 .emailAddress("fdgdg")
                 .build();
 
-        given(userRegisterMapper.fromDto(ArgumentMatchers.any(UserRegisterDto.class)))
-                .willReturn(new UserRegisterRequest("Thabo", "gman",
+        given(brokerMapper.fromDto(ArgumentMatchers.any(BrokerDto.class)))
+                .willReturn(new BrokerRequest("Thabo", "gman",
                         LocalDate.of(2004,9,7), "0797978797",
                         "dgdgd@gmail.com", "vdsfvs"));
 
-        given(userRegisterService.createUser(ArgumentMatchers.any(UserRegisterRequest.class)))
-                .willReturn(new UserRegisterEntity());
+        given(brokerServiceImplement.createUser(ArgumentMatchers.any(BrokerRequest.class)))
+                .willReturn(new BrokerEntity());
 
-        given(userRegisterMapper.toDto(ArgumentMatchers.any(UserRegisterEntity.class)))
+        given(brokerMapper.toDto(ArgumentMatchers.any(BrokerEntity.class)))
                 .willReturn(expectedResponse);
 
-        ResultActions response = mockMvc.perform(post("/api/v1/stockExchange/userRegister")
+        ResultActions response = mockMvc.perform(post("/api/v1/stockExchange/broker/register")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(userRegisterDto)));
+                .content(objectMapper.writeValueAsString(userDto)));
 
         response.andExpect(MockMvcResultMatchers.status().isCreated()).andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name",
@@ -87,12 +91,8 @@ class UserRegisterControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.phoneNumber",
                         org.hamcrest.CoreMatchers.is(expectedResponse.phoneNumber())))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.emailAddress",
-                        org.hamcrest.CoreMatchers.is(expectedResponse.emailAddress())))
-        ;
+                        org.hamcrest.CoreMatchers.is(expectedResponse.emailAddress())));
 
     }
-
-
-
 
 }

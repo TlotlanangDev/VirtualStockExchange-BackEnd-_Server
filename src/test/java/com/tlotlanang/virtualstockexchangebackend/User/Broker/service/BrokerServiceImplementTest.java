@@ -1,8 +1,10 @@
-package com.tlotlanang.virtualstockexchangebackend.userRegister.service;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.service;
 
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.repository.BrokerRepository;
 import com.tlotlanang.virtualstockexchangebackend.userRegister.domain.UserRegisterRequest;
 import com.tlotlanang.virtualstockexchangebackend.userRegister.entity.UserRegisterEntity;
-import com.tlotlanang.virtualstockexchangebackend.userRegister.repository.UserRegisterRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,21 +15,19 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-@ExtendWith(MockitoExtension.class)
-class UserRegisterServiceImplementTest {
+@ExtendWith(MockitoExtension .class)
+class BrokerServiceImplementTest {
 
     @Mock
-    UserRegisterRepository userRegisterRepository;
+    private BrokerRepository brokerRepository;
 
     @InjectMocks
-    UserRegisterServiceImplement userRegisterService;
+    BrokerServiceImplement brokerServiceImplement;
 
     @Test
     public void testSaveToRepository(){
 
-        UserRegisterEntity userRegisterEntity= UserRegisterEntity.builder()
+        BrokerEntity brokerEntity= BrokerEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -36,7 +36,7 @@ class UserRegisterServiceImplementTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        UserRegisterRequest userRegisterRequest = UserRegisterRequest.builder()
+        BrokerRequest brokerRequest = BrokerRequest.builder()
                 //.Id(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -46,10 +46,10 @@ class UserRegisterServiceImplementTest {
                 .passWord("ergdg43gr").build();
 
 
-        Mockito.when(userRegisterRepository.save(Mockito.any(UserRegisterEntity.class)))
-                .thenReturn(userRegisterEntity);
+        Mockito.when(brokerRepository.save(Mockito.any(BrokerEntity.class)))
+                .thenReturn(brokerEntity);
 
-        UserRegisterEntity savedRepository = userRegisterService.createUser(userRegisterRequest);
+        BrokerEntity savedRepository = brokerServiceImplement.createUser(brokerRequest);
 
         Assertions.assertThat(savedRepository).isNotNull();
         Assertions.assertThat(savedRepository.getUuid()).isNull();
@@ -61,5 +61,6 @@ class UserRegisterServiceImplementTest {
         Assertions.assertThat(savedRepository.getPassWord()).isEqualTo("ergdg43gr").isNotNull();
 
     }
+
 
 }
