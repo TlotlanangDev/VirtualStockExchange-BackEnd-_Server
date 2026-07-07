@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Broker.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 
-class BrokerDtoTest {
+class CompanyEntityTest {
 
     private Validator validation;
     @BeforeEach
@@ -23,9 +23,9 @@ class BrokerDtoTest {
     }
 
     @Test
-    public void setBrokerDto_passValidInfo_returnDataPassed(){
-        BrokerDto brokerDto = BrokerDto.builder()
-
+    public void setCompanyEntity_passValidInfo_returnDataPassed(){
+        CompanyEntity companyEntity = CompanyEntity.builder()
+                .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2002,9,1))
@@ -33,7 +33,7 @@ class BrokerDtoTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        Set<ConstraintViolation<BrokerDto>> violations = validation.validate(brokerDto);
+        Set<ConstraintViolation<CompanyEntity>> violations = validation.validate(companyEntity);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
@@ -42,13 +42,11 @@ class BrokerDtoTest {
         Assertions.assertThat(violations).isEmpty();
         Assertions.assertThat(violations.size()).isEqualTo(0);
 
-
-
     }
 
     @Test
-    public void setBrokerDto_passInValidInfo_returnData(){
-        BrokerDto brokerDto = BrokerDto.builder()
+    public void setCompanyEntity_passInValidInfo_returnData(){
+        CompanyEntity companyEntity = CompanyEntity.builder()
 
                 .name("d")
                 .surName("s")
@@ -57,7 +55,7 @@ class BrokerDtoTest {
                 .emailAddress("Tlotlananggmailcom")
                 .passWord("").build();
 
-        Set<ConstraintViolation<BrokerDto>> violations = validation.validate(brokerDto);
+        Set<ConstraintViolation<CompanyEntity>> violations = validation.validate(companyEntity);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())

@@ -1,4 +1,5 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Broker.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain;
+
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
@@ -12,9 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
-
-class BrokerDtoTest {
-
+class CompanyDtoTest {
     private Validator validation;
     @BeforeEach
     void setUp() {
@@ -23,8 +22,8 @@ class BrokerDtoTest {
     }
 
     @Test
-    public void setBrokerDto_passValidInfo_returnDataPassed(){
-        BrokerDto brokerDto = BrokerDto.builder()
+    public void setCompanyDto_passValidInfo_returnDataPassed(){
+        CompanyDto companyDto = CompanyDto.builder()
 
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -33,7 +32,7 @@ class BrokerDtoTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        Set<ConstraintViolation<BrokerDto>> violations = validation.validate(brokerDto);
+        Set<ConstraintViolation<CompanyDto>> violations = validation.validate(companyDto);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
@@ -47,8 +46,8 @@ class BrokerDtoTest {
     }
 
     @Test
-    public void setBrokerDto_passInValidInfo_returnData(){
-        BrokerDto brokerDto = BrokerDto.builder()
+    public void setCompanyDto_passInValidInfo_returnData(){
+        CompanyDto companyDto = CompanyDto.builder()
 
                 .name("d")
                 .surName("s")
@@ -57,7 +56,7 @@ class BrokerDtoTest {
                 .emailAddress("Tlotlananggmailcom")
                 .passWord("").build();
 
-        Set<ConstraintViolation<BrokerDto>> violations = validation.validate(brokerDto);
+        Set<ConstraintViolation<CompanyDto>> violations = validation.validate(companyDto);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
@@ -73,5 +72,4 @@ class BrokerDtoTest {
 
 
     }
-
 }
