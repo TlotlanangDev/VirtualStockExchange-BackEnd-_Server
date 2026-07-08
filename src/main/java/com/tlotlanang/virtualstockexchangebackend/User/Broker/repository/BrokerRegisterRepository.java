@@ -1,12 +1,12 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Broker.repository;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerRegisterEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
 @Repository
-public interface BrokerRepository extends JpaRepository<BrokerEntity, UUID> {
+public interface BrokerRegisterRepository extends JpaRepository<BrokerRegisterEntity, UUID> {
 
 }

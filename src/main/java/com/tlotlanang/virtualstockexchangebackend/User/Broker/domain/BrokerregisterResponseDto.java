@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Builder
-public record BrokerResponseDto(
+public record BrokerregisterResponseDto(
         UUID Id,
         String name,
         String surName,

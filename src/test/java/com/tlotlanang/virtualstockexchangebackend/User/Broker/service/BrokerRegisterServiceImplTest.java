@@ -1,8 +1,8 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Broker.service;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.repository.BrokerRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.repository.BrokerRegisterRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,18 +14,18 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 
 @ExtendWith(MockitoExtension .class)
-class BrokerServiceImplementTest {
+class BrokerRegisterServiceImplTest {
 
     @Mock
-    private BrokerRepository brokerRepository;
+    private BrokerRegisterRepository brokerRegisterRepository;
 
     @InjectMocks
-    private BrokerServiceImplement brokerServiceImplement;
+    private BrokerRegisterServiceImpl brokerServiceImplement;
 
     @Test
     public void testSaveToRepository(){
 
-        BrokerEntity brokerEntity= BrokerEntity.builder()
+        BrokerRegisterEntity brokerRegisterEntity = BrokerRegisterEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -34,7 +34,7 @@ class BrokerServiceImplementTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        BrokerRequest brokerRequest = BrokerRequest.builder()
+        BrokerRegisterRequest brokerRegisterRequest = BrokerRegisterRequest.builder()
                 //.Id(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -44,10 +44,10 @@ class BrokerServiceImplementTest {
                 .passWord("ergdg43gr").build();
 
 
-        Mockito.when(brokerRepository.save(Mockito.any(BrokerEntity.class)))
-                .thenReturn(brokerEntity);
+        Mockito.when(brokerRegisterRepository.save(Mockito.any(BrokerRegisterEntity.class)))
+                .thenReturn(brokerRegisterEntity);
 
-        BrokerEntity savedRepository = brokerServiceImplement.createUser(brokerRequest);
+        BrokerRegisterEntity savedRepository = brokerServiceImplement.createUser(brokerRegisterRequest);
 
         Assertions.assertThat(savedRepository).isNotNull();
         Assertions.assertThat(savedRepository.getUuid()).isNull();

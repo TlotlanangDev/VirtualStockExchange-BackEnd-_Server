@@ -1,6 +1,6 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Broker.repository;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerRegisterEntity;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,15 +12,15 @@ import java.time.LocalDate;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
-class BrokerRepositoryTest {
+class BrokerRegisterRepositoryTest {
 
     @Autowired
-    private BrokerRepository brokerRepository;
+    private BrokerRegisterRepository brokerRegisterRepository;
 
     @Test
     public void setBrokerRepository_Save_ReturnSavedUser(){
 
-        BrokerEntity brokerEntity= BrokerEntity.builder()
+        BrokerRegisterEntity brokerRegisterEntity = BrokerRegisterEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -29,7 +29,7 @@ class BrokerRepositoryTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        BrokerEntity savedToEntity = brokerRepository.save(brokerEntity);
+        BrokerRegisterEntity savedToEntity = brokerRegisterRepository.save(brokerRegisterEntity);
 
         Assertions.assertThat(savedToEntity).isNotNull();
         Assertions.assertThat(savedToEntity.getUuid()).isNotNull();
