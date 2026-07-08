@@ -75,7 +75,7 @@ class InvestorControllerTest {
         given(investorMapper.toDto(ArgumentMatchers.any(InvestorEntity.class)))
                 .willReturn(expectedResponse);
 
-        ResultActions response = mockMvc.perform(post("/api/v1/stockExchange/broker/investor")
+        ResultActions response = mockMvc.perform(post("/api/v1/stockExchange/investor/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(investorDto)));
 

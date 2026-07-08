@@ -74,7 +74,7 @@ class BankerControllerTest {
         given(bankerMapper.toDto(ArgumentMatchers.any(BankerEntity.class)))
                 .willReturn(expectedResponse);
 
-        ResultActions response = mockMvc.perform(post("/api/v1/stockExchange/broker/banker")
+        ResultActions response = mockMvc.perform(post("/api/v1/stockExchange/banker/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(bankerDto)));
 
