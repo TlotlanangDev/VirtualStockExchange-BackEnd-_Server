@@ -20,7 +20,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BankerEntity {
+public class BankerRegisterEntity {
         @Id
         @GeneratedValue
         @UuidGenerator

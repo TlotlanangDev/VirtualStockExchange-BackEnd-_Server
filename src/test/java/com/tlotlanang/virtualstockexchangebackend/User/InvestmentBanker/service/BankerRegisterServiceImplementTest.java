@@ -1,8 +1,8 @@
 package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.service;
 
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.entity.BankerEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.repository.BankerRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.entity.BankerRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.repository.BankerRegisterRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,18 +15,18 @@ import java.time.LocalDate;
 
 
 @ExtendWith(MockitoExtension.class)
-class BankerServiceImplementTest {
+class BankerRegisterServiceImplementTest {
 
     @Mock
-    private BankerRepository bankerRepository;
+    private BankerRegisterRepository bankerRegisterRepository;
 
     @InjectMocks
-    private BankerServiceImplement bankerServiceImplement;
+    private BankerRegisterServiceImplement bankerServiceImplement;
 
     @Test
     public void testSaveToRepository(){
 
-        BankerEntity bankerEntity= BankerEntity.builder()
+        BankerRegisterEntity bankerRegisterEntity = BankerRegisterEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -35,7 +35,7 @@ class BankerServiceImplementTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        BankerRequest bankerRequest = BankerRequest.builder()
+        BankerRegisterRequest bankerRegisterRequest = BankerRegisterRequest.builder()
                 //.Id(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -45,10 +45,10 @@ class BankerServiceImplementTest {
                 .passWord("ergdg43gr").build();
 
 
-        Mockito.when(bankerRepository.save(Mockito.any(BankerEntity.class)))
-                .thenReturn(bankerEntity);
+        Mockito.when(bankerRegisterRepository.save(Mockito.any(BankerRegisterEntity.class)))
+                .thenReturn(bankerRegisterEntity);
 
-        BankerEntity savedRepository = bankerServiceImplement.createUser(bankerRequest);
+        BankerRegisterEntity savedRepository = bankerServiceImplement.createUser(bankerRegisterRequest);
 
         Assertions.assertThat(savedRepository).isNotNull();
         Assertions.assertThat(savedRepository.getUuid()).isNull();

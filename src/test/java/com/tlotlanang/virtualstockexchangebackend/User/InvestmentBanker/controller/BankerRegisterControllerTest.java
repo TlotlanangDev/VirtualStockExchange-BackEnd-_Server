@@ -1,11 +1,11 @@
 package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.controller;
 
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerDto;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.entity.BankerEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.mapper.BankerMapper;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.service.BankerServiceImplement;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerRegisterDto;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerRegisterResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.entity.BankerRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.mapper.BankerRegisterMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.service.BankerRegisterServiceImplement;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
@@ -26,27 +26,27 @@ import java.time.LocalDate;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
-@WebMvcTest(controllers = BankerController.class)
+@WebMvcTest(controllers = BankerRegisterController.class)
 @AutoConfigureMockMvc(addFilters = false)
 @ExtendWith(MockitoExtension.class)
-class BankerControllerTest {
+class BankerRegisterControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @MockitoBean
-    private BankerMapper bankerMapper;
+    private BankerRegisterMapper bankerRegisterMapper;
 
     @Autowired
     private ObjectMapper objectMapper;
 
     @MockitoBean
-    private BankerServiceImplement bankerServiceImplement;
+    private BankerRegisterServiceImplement bankerServiceImplement;
 
     @Test
     void BankerController_createUser_ReturnCreatedStatus() throws Exception {
 
-        BankerDto bankerDto = BankerDto.builder()
+        BankerRegisterDto bankerRegisterDto = BankerRegisterDto.builder()
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2002, 9, 1))
@@ -55,7 +55,7 @@ class BankerControllerTest {
                 .passWord("ergdg43gr")
                 .build();
 
-        BankerResponseDto expectedResponse = BankerResponseDto.builder()
+        BankerRegisterResponseDto expectedResponse = BankerRegisterResponseDto.builder()
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2004,9,6))
@@ -63,20 +63,20 @@ class BankerControllerTest {
                 .emailAddress("fdgdg")
                 .build();
 
-        given(bankerMapper.fromDto(ArgumentMatchers.any(BankerDto.class)))
-                .willReturn(new BankerRequest("Thabo", "gman",
+        given(bankerRegisterMapper.fromDto(ArgumentMatchers.any(BankerRegisterDto.class)))
+                .willReturn(new BankerRegisterRequest("Thabo", "gman",
                         LocalDate.of(2004,9,7), "0797978797",
                         "dgdgd@gmail.com", "vdsfvs"));
 
-        given(bankerServiceImplement.createUser(ArgumentMatchers.any(BankerRequest.class)))
-                .willReturn(new BankerEntity());
+        given(bankerServiceImplement.createUser(ArgumentMatchers.any(BankerRegisterRequest.class)))
+                .willReturn(new BankerRegisterEntity());
 
-        given(bankerMapper.toDto(ArgumentMatchers.any(BankerEntity.class)))
+        given(bankerRegisterMapper.toDto(ArgumentMatchers.any(BankerRegisterEntity.class)))
                 .willReturn(expectedResponse);
 
         ResultActions response = mockMvc.perform(post("/api/v1/stockExchange/banker/register")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(bankerDto)));
+                .content(objectMapper.writeValueAsString(bankerRegisterDto)));
 
         response.andExpect(MockMvcResultMatchers.status().isCreated()).andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name",

@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Set;
 
 
-class BankerEntityTest {
+class BankerRegisterEntityTest {
 
     private Validator validation;
     @BeforeEach
@@ -25,7 +25,7 @@ class BankerEntityTest {
 
     @Test
     public void setBankerEntity_passValidInfo_returnDataPassed(){
-        BankerEntity bankerEntity = BankerEntity.builder()
+        BankerRegisterEntity bankerRegisterEntity = BankerRegisterEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -34,7 +34,7 @@ class BankerEntityTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        Set<ConstraintViolation<BankerEntity>> violations = validation.validate(bankerEntity);
+        Set<ConstraintViolation<BankerRegisterEntity>> violations = validation.validate(bankerRegisterEntity);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
@@ -47,7 +47,7 @@ class BankerEntityTest {
 
     @Test
     public void setBankerEntity_passInValidInfo_returnData(){
-        BankerEntity bankerEntity = BankerEntity.builder()
+        BankerRegisterEntity bankerRegisterEntity = BankerRegisterEntity.builder()
 
                 .name("d")
                 .surName("s")
@@ -56,7 +56,7 @@ class BankerEntityTest {
                 .emailAddress("Tlotlananggmailcom")
                 .passWord("").build();
 
-        Set<ConstraintViolation<BankerEntity>> violations = validation.validate(bankerEntity);
+        Set<ConstraintViolation<BankerRegisterEntity>> violations = validation.validate(bankerRegisterEntity);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())

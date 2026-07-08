@@ -7,7 +7,7 @@ import lombok.Builder;
 import java.time.LocalDate;
 
 @Builder
-public record BankerDto(
+public record BankerRegisterDto(
 
          @NotBlank(message = "Please Enter your Name.")
          @Size(min = 2, max = 50, message = "name must be between 2 & 50 characters.")

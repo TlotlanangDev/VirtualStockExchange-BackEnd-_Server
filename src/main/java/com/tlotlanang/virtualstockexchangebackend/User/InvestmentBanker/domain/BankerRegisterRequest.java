@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 @Builder
 
-public record BankerRequest(
+public record BankerRegisterRequest(
         String name,
         String surName,
         LocalDate dateOfBirth,
