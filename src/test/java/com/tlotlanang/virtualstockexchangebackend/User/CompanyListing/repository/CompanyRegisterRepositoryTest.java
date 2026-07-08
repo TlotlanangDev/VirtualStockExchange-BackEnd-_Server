@@ -1,7 +1,7 @@
 package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.repository;
 
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.CompanyEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.CompanyRegisterEntity;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +13,15 @@ import java.time.LocalDate;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
-class CompanyRepositoryTest {
+class CompanyRegisterRepositoryTest {
 
     @Autowired
-    private CompanyRepository companyRepository;
+    private CompanyRegisterRepository companyRegisterRepository;
 
     @Test
     public void setCompanyRepository_Save_ReturnSavedUser(){
 
-        CompanyEntity companyEntity= CompanyEntity.builder()
+        CompanyRegisterEntity companyRegisterEntity = CompanyRegisterEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -30,7 +30,7 @@ class CompanyRepositoryTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        CompanyEntity savedToEntity = companyRepository.save(companyEntity);
+        CompanyRegisterEntity savedToEntity = companyRegisterRepository.save(companyRegisterEntity);
 
         Assertions.assertThat(savedToEntity).isNotNull();
         Assertions.assertThat(savedToEntity.getUuid()).isNotNull();

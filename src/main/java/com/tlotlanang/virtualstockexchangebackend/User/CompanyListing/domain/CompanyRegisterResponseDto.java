@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Builder
-public record CompanyResponseDto(
+public record CompanyRegisterResponseDto(
         UUID Id,
         String name,
         String surName,

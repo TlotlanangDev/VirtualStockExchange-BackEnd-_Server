@@ -1,9 +1,9 @@
 package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.service;
 
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.CompanyEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.repository.CompanyRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.CompanyRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.repository.CompanyRegisterRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,18 +16,18 @@ import java.time.LocalDate;
 
 
 @ExtendWith(MockitoExtension.class)
-class CompanyServiceImplementTest {
+class CompanyRegisterServiceImplementTest {
 
     @Mock
-    private CompanyRepository companyRepository;
+    private CompanyRegisterRepository companyRegisterRepository;
 
     @InjectMocks
-    CompanyServiceImplement companyServiceImplement;
+    CompanyRegisterServiceImplement companyServiceImplement;
 
     @Test
     public void testSaveToRepository(){
 
-        CompanyEntity companyEntity= CompanyEntity.builder()
+        CompanyRegisterEntity companyRegisterEntity = CompanyRegisterEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -36,7 +36,7 @@ class CompanyServiceImplementTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        CompanyRequest companyRequest = CompanyRequest.builder()
+        CompanyRegisterRequest companyRegisterRequest = CompanyRegisterRequest.builder()
                 //.Id(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -46,10 +46,10 @@ class CompanyServiceImplementTest {
                 .passWord("ergdg43gr").build();
 
 
-        Mockito.when(companyRepository.save(Mockito.any(CompanyEntity.class)))
-                .thenReturn(companyEntity);
+        Mockito.when(companyRegisterRepository.save(Mockito.any(CompanyRegisterEntity.class)))
+                .thenReturn(companyRegisterEntity);
 
-        CompanyEntity savedRepository = companyServiceImplement.createUser(companyRequest);
+        CompanyRegisterEntity savedRepository = companyServiceImplement.createUser(companyRegisterRequest);
 
         Assertions.assertThat(savedRepository).isNotNull();
         Assertions.assertThat(savedRepository.getUuid()).isNull();

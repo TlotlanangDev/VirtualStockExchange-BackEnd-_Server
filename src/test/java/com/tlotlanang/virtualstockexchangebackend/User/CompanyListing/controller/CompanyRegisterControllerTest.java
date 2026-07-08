@@ -1,11 +1,11 @@
 package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.controller;
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.CompanyEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.mapper.CompanyMapper;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.service.CompanyServiceImplement;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyRegisterDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyRegisterResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.CompanyRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.mapper.CompanyRegisterMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.service.CompanyRegisterServiceImplement;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
@@ -26,27 +26,27 @@ import java.time.LocalDate;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
-@WebMvcTest(controllers = CompanyController.class)
+@WebMvcTest(controllers = CompanyRegisterController.class)
 @AutoConfigureMockMvc(addFilters = false)
 @ExtendWith(MockitoExtension.class)
-class CompanyControllerTest {
+class CompanyRegisterControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @MockitoBean
-    private CompanyMapper companyMapper;
+    private CompanyRegisterMapper companyRegisterMapper;
 
     @Autowired
     private ObjectMapper objectMapper;
 
     @MockitoBean
-    private CompanyServiceImplement companyServiceImplement;
+    private CompanyRegisterServiceImplement companyServiceImplement;
 
     @Test
     void CompanyController_createUser_ReturnCreatedStatus() throws Exception {
 
-        CompanyDto companyDto = CompanyDto.builder()
+        CompanyRegisterDto companyRegisterDto = CompanyRegisterDto.builder()
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2002, 9, 1))
@@ -55,7 +55,7 @@ class CompanyControllerTest {
                 .passWord("ergdg43gr")
                 .build();
 
-        CompanyResponseDto expectedResponse = CompanyResponseDto.builder()
+        CompanyRegisterResponseDto expectedResponse = CompanyRegisterResponseDto.builder()
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2004,9,6))
@@ -63,20 +63,20 @@ class CompanyControllerTest {
                 .emailAddress("fdgdg")
                 .build();
 
-        given(companyMapper.fromDto(ArgumentMatchers.any(CompanyDto.class)))
-                .willReturn(new CompanyRequest("Thabo", "gman",
+        given(companyRegisterMapper.fromDto(ArgumentMatchers.any(CompanyRegisterDto.class)))
+                .willReturn(new CompanyRegisterRequest("Thabo", "gman",
                         LocalDate.of(2004,9,7), "0797978797",
                         "dgdgd@gmail.com", "vdsfvs"));
 
-        given(companyServiceImplement.createUser(ArgumentMatchers.any(CompanyRequest.class)))
-                .willReturn(new CompanyEntity());
+        given(companyServiceImplement.createUser(ArgumentMatchers.any(CompanyRegisterRequest.class)))
+                .willReturn(new CompanyRegisterEntity());
 
-        given(companyMapper.toDto(ArgumentMatchers.any(CompanyEntity.class)))
+        given(companyRegisterMapper.toDto(ArgumentMatchers.any(CompanyRegisterEntity.class)))
                 .willReturn(expectedResponse);
 
         ResultActions response = mockMvc.perform(post("/api/v1/stockExchange/company/register")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(companyDto)));
+                .content(objectMapper.writeValueAsString(companyRegisterDto)));
 
         response.andExpect(MockMvcResultMatchers.status().isCreated()).andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name",
