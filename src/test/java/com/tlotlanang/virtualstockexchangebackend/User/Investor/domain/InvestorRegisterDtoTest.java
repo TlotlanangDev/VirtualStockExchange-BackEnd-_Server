@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 
-class InvestorDtoTest {
+class InvestorRegisterDtoTest {
 
     private Validator validation;
     @BeforeEach
@@ -24,7 +24,7 @@ class InvestorDtoTest {
 
     @Test
     public void setInvestorDto_passValidInfo_returnDataPassed(){
-        InvestorDto investorDto = InvestorDto.builder()
+        InvestorRegisterDto investorRegisterDto = InvestorRegisterDto.builder()
 
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -33,7 +33,7 @@ class InvestorDtoTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        Set<ConstraintViolation<InvestorDto>> violations = validation.validate(investorDto);
+        Set<ConstraintViolation<InvestorRegisterDto>> violations = validation.validate(investorRegisterDto);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
@@ -48,7 +48,7 @@ class InvestorDtoTest {
 
     @Test
     public void setInvestorDto_passInValidInfo_returnData(){
-        InvestorDto investorDto = InvestorDto.builder()
+        InvestorRegisterDto investorRegisterDto = InvestorRegisterDto.builder()
 
                 .name("d")
                 .surName("s")
@@ -57,7 +57,7 @@ class InvestorDtoTest {
                 .emailAddress("Tlotlananggmailcom")
                 .passWord("").build();
 
-        Set<ConstraintViolation<InvestorDto>> violations = validation.validate(investorDto);
+        Set<ConstraintViolation<InvestorRegisterDto>> violations = validation.validate(investorRegisterDto);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())

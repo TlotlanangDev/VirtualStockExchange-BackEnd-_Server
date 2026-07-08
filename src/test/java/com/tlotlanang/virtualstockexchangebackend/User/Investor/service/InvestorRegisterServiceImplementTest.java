@@ -1,8 +1,8 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Investor.service;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.entity.InvestorEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.repository.InvestorRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.entity.InvestorRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.repository.InvestorRegisterRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,18 +15,18 @@ import java.time.LocalDate;
 
 
 @ExtendWith(MockitoExtension.class)
-class InvestorServiceImplementTest {
+class InvestorRegisterServiceImplementTest {
 
     @Mock
-    private InvestorRepository investorRepository;
+    private InvestorRegisterRepository investorRegisterRepository;
 
     @InjectMocks
-    private InvestorServiceImplement investorServiceImplement;
+    private InvestorRegisterServiceImplement investorServiceImplement;
 
     @Test
     public void testSaveToRepository(){
 
-        InvestorEntity investorEntity= InvestorEntity.builder()
+        InvestorRegisterEntity investorRegisterEntity = InvestorRegisterEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -35,7 +35,7 @@ class InvestorServiceImplementTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        InvestorRequest investorRequest = InvestorRequest.builder()
+        InvestorRegisterRequest investorRegisterRequest = InvestorRegisterRequest.builder()
                 //.Id(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -45,10 +45,10 @@ class InvestorServiceImplementTest {
                 .passWord("ergdg43gr").build();
 
 
-        Mockito.when(investorRepository.save(Mockito.any(InvestorEntity.class)))
-                .thenReturn(investorEntity);
+        Mockito.when(investorRegisterRepository.save(Mockito.any(InvestorRegisterEntity.class)))
+                .thenReturn(investorRegisterEntity);
 
-        InvestorEntity savedRepository = investorServiceImplement.createUser(investorRequest);
+        InvestorRegisterEntity savedRepository = investorServiceImplement.createUser(investorRegisterRequest);
 
         Assertions.assertThat(savedRepository).isNotNull();
         Assertions.assertThat(savedRepository.getUuid()).isNull();

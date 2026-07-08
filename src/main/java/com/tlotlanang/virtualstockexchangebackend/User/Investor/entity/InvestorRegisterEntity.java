@@ -20,7 +20,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class InvestorEntity {
+public class InvestorRegisterEntity {
         @Id
         @GeneratedValue
         @UuidGenerator

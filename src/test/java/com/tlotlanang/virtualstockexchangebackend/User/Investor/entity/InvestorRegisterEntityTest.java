@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Set;
 
 
-class InvestorEntityTest {
+class InvestorRegisterEntityTest {
 
     private Validator validation;
     @BeforeEach
@@ -25,7 +25,7 @@ class InvestorEntityTest {
 
     @Test
     public void setInvestorEntity_passValidInfo_returnDataPassed(){
-        InvestorEntity investorEntity = InvestorEntity.builder()
+        InvestorRegisterEntity investorRegisterEntity = InvestorRegisterEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
@@ -34,7 +34,7 @@ class InvestorEntityTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        Set<ConstraintViolation<InvestorEntity>> violations = validation.validate(investorEntity);
+        Set<ConstraintViolation<InvestorRegisterEntity>> violations = validation.validate(investorRegisterEntity);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
@@ -47,7 +47,7 @@ class InvestorEntityTest {
 
     @Test
     public void setInvestorEntity_passInValidInfo_returnData(){
-        InvestorEntity investorEntity = InvestorEntity.builder()
+        InvestorRegisterEntity investorRegisterEntity = InvestorRegisterEntity.builder()
 
                 .name("d")
                 .surName("s")
@@ -56,7 +56,7 @@ class InvestorEntityTest {
                 .emailAddress("Tlotlananggmailcom")
                 .passWord("").build();
 
-        Set<ConstraintViolation<InvestorEntity>> violations = validation.validate(investorEntity);
+        Set<ConstraintViolation<InvestorRegisterEntity>> violations = validation.validate(investorRegisterEntity);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
