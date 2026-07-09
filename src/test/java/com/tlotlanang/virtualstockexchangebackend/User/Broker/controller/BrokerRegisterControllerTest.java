@@ -3,7 +3,7 @@ package com.tlotlanang.virtualstockexchangebackend.User.Broker.controller;
 
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterDto;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerregisterResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterResponseDto;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerRegisterEntity;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.mapper.BrokerRegisterMapper;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.service.BrokerRegisterServiceImpl;
@@ -57,7 +57,7 @@ class BrokerRegisterControllerTest {
                 .passWord("ergdg43gr")
                 .build();
 
-        BrokerregisterResponseDto expectedResponse = BrokerregisterResponseDto.builder()
+        BrokerRegisterResponseDto expectedResponse = BrokerRegisterResponseDto.builder()
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2004,9,6))

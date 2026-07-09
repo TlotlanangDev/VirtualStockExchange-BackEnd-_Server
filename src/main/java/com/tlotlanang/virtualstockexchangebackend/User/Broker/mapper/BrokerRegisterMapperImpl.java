@@ -2,7 +2,7 @@ package com.tlotlanang.virtualstockexchangebackend.User.Broker.mapper;
 
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterDto;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerregisterResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterResponseDto;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerRegisterEntity;
 import org.springframework.stereotype.Component;
 
@@ -20,8 +20,8 @@ public class BrokerRegisterMapperImpl implements BrokerRegisterMapper {
     }
 
     @Override
-    public BrokerregisterResponseDto toDto(BrokerRegisterEntity brokerRegisterEntity) {
-        return new BrokerregisterResponseDto(
+    public BrokerRegisterResponseDto toDto(BrokerRegisterEntity brokerRegisterEntity) {
+        return new BrokerRegisterResponseDto(
                 brokerRegisterEntity.getUuid(),
                 brokerRegisterEntity.getName(),
                 brokerRegisterEntity.getSurName(),

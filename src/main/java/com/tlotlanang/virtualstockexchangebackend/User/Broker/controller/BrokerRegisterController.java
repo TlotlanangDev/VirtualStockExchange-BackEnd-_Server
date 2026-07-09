@@ -2,7 +2,7 @@ package com.tlotlanang.virtualstockexchangebackend.User.Broker.controller;
 
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterDto;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerregisterResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterResponseDto;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerRegisterEntity;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.mapper.BrokerRegisterMapper;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.service.BrokerRegisterService;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/v1/stockExchange/broker")
-public class BrokerRegisterController implements RegisterUser<BrokerregisterResponseDto, BrokerRegisterDto> {
+public class BrokerRegisterController implements RegisterUser<BrokerRegisterResponseDto, BrokerRegisterDto> {
     @Autowired
     public BrokerRegisterService brokerRegisterService;
 
@@ -24,10 +24,10 @@ public class BrokerRegisterController implements RegisterUser<BrokerregisterResp
 
 
     @Override
-    public ResponseEntity<BrokerregisterResponseDto> registerUser(BrokerRegisterDto brokerRegisterDto) {
+    public ResponseEntity<BrokerRegisterResponseDto> registerUser(BrokerRegisterDto brokerRegisterDto) {
         BrokerRegisterRequest brokerRegisterRequest = brokerRegisterMapper.fromDto(brokerRegisterDto);
         BrokerRegisterEntity brokerRegisterEntity = brokerRegisterService.createUser(brokerRegisterRequest);
-        BrokerregisterResponseDto brokerregisterResponseDto = brokerRegisterMapper.toDto(brokerRegisterEntity);
+        BrokerRegisterResponseDto brokerregisterResponseDto = brokerRegisterMapper.toDto(brokerRegisterEntity);
 
         return new ResponseEntity<>(brokerregisterResponseDto, HttpStatus.CREATED);
     }
