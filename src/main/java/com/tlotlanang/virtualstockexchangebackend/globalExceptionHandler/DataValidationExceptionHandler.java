@@ -1,7 +1,7 @@
 package com.tlotlanang.virtualstockexchangebackend.globalExceptionHandler;
 
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerEmailPassExceptionDetails;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.exception.brokerEmailPassException;
+import com.tlotlanang.virtualstockexchangebackend.globalExceptionHandler.exception.EmailPassException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,13 +35,11 @@ public class DataValidationExceptionHandler {
         return ErrorMap;
     }
 
-    @ExceptionHandler(brokerEmailPassException.class)
-    public ResponseEntity<Object> handlePasEmailMissmatch(brokerEmailPassException exception, WebRequest webRequest) {
+    @ExceptionHandler(EmailPassException.class)
+    public ResponseEntity<Object> handlePasEmailMissmatch(EmailPassException exception, WebRequest webRequest) {
 
-        return new ResponseEntity<>(new BrokerEmailPassExceptionDetails(exception.getMessage(),
-                HttpStatus.NOT_FOUND,
-                LocalDateTime.now()),
-                HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new BrokerEmailPassExceptionDetails(exception.getMessage()), HttpStatus.NOT_FOUND);
+
     }
 
 }
