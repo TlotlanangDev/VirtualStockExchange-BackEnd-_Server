@@ -11,16 +11,16 @@ public class BrokerLoginMapperImpl implements BrokerLoginMapper {
     @Override
     public BrokerLoginRequest fromDto(BrokerLoginDto brokerLoginDto) {
         return new BrokerLoginRequest(
-                   brokerLoginDto.emailAddress(),
-                   brokerLoginDto.passWord()
+                brokerLoginDto.emailAddress(),
+                brokerLoginDto.passWord()
         );
     }
 
     @Override
     public BrokerLoginResponseDto toDto(BrokerLoginEntity brokerLoginEntity) {
         return new BrokerLoginResponseDto(
-                   brokerLoginEntity.getEmailAddress(),
-                   brokerLoginEntity.getPassWord()
+                brokerLoginEntity.getEmailAddress(),
+                brokerLoginEntity.getPassWord()
         );
     }
 }

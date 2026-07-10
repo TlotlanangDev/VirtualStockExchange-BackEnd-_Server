@@ -11,6 +11,5 @@ import java.time.LocalDateTime;
 public class BrokerEmailPassExceptionDetails {
 
     private String message;
-    private HttpStatus httpStatus;
-    private LocalDateTime localDate;
+
 }

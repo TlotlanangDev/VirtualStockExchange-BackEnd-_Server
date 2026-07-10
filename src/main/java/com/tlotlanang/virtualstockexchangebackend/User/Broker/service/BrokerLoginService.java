@@ -5,5 +5,5 @@ import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerLogin
 
 public interface BrokerLoginService {
 
-    BrokerLoginEntity loginUser(BrokerLoginRequest brokerLoginRequest);
+    BrokerLoginEntity loginUser(BrokerLoginRequest companyLoginRequest);
 }

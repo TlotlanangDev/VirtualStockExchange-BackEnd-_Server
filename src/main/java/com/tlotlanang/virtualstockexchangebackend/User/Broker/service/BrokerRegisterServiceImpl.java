@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class BrokerRegisterServiceImpl implements BrokerRegisterService {
 
     @Autowired
-    private BrokerRegisterRepository userregisterrepository;
+    private BrokerRegisterRepository brokerregisterrepository;
 
 
     @Override
@@ -26,7 +26,9 @@ public class BrokerRegisterServiceImpl implements BrokerRegisterService {
                 brokerRegisterRequest.emailAddress(),
                 brokerRegisterRequest.passWord()
         );
-        return userregisterrepository.save(brokerRegisterEntity);
+
+
+        return brokerregisterrepository.save(brokerRegisterEntity);
     }
 
 }
