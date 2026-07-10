@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class BankerRegisterServiceImplement implements BankerRegisterService {
 
     @Autowired
-    private BankerRegisterRepository userregisterrepository;
+    private BankerRegisterRepository bankerRegisterRepository;
 
 
     @Override
@@ -26,7 +26,7 @@ public class BankerRegisterServiceImplement implements BankerRegisterService {
                 bankerRegisterRequest.emailAddress(),
                 bankerRegisterRequest.passWord()
         );
-        return userregisterrepository.save(bankerRegisterEntity);
+        return bankerRegisterRepository.save(bankerRegisterEntity);
     }
 
 }
