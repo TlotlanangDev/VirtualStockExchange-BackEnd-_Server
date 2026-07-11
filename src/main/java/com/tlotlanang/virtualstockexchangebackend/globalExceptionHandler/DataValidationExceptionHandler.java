@@ -31,7 +31,7 @@ public class DataValidationExceptionHandler {
     public Map<String,String>handleDateInputException(HttpMessageNotReadableException exception) {
         Map<String, String> ErrorMap = new HashMap<>();
         exception.getLocalizedMessage();
-        ErrorMap.put("Date Of Birth", "Please Enter correct Date of Birth in this format:yyyy-MM-dd");
+        ErrorMap.put("Date Of Birth", "Please Enter correct Date of Birth in format:yyyy-MM-dd");
         return ErrorMap;
     }
 
