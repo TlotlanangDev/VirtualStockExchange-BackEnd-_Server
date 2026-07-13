@@ -7,9 +7,11 @@ import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerRegis
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.mapper.BrokerRegisterMapper;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.service.BrokerRegisterService;
 import com.tlotlanang.virtualstockexchangebackend.User.RegisterUser;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +26,7 @@ public class BrokerRegisterController implements RegisterUser<BrokerRegisterResp
 
 
     @Override
-    public ResponseEntity<BrokerRegisterResponseDto> registerUser(BrokerRegisterDto brokerRegisterDto) {
+    public ResponseEntity<BrokerRegisterResponseDto> registerUser(@Valid @RequestBody BrokerRegisterDto brokerRegisterDto) {
         BrokerRegisterRequest brokerRegisterRequest = brokerRegisterMapper.fromDto(brokerRegisterDto);
         BrokerRegisterEntity brokerRegisterEntity = brokerRegisterService.createUser(brokerRegisterRequest);
         BrokerRegisterResponseDto brokerregisterResponseDto = brokerRegisterMapper.toDto(brokerRegisterEntity);
