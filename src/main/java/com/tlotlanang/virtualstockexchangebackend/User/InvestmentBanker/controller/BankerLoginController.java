@@ -8,9 +8,11 @@ import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.entity.B
 import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.mapper.BankerLoginMapper;
 import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.service.BankerLoginService;
 import com.tlotlanang.virtualstockexchangebackend.User.LoginUser;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +27,7 @@ public class BankerLoginController implements LoginUser<BankerLoginResponseDto, 
     private BankerLoginMapper bankerLoginMapper;
 
     @Override
-    public ResponseEntity<BankerLoginResponseDto> loginUser(BankerLoginDto bankerLoginDto) {
+    public ResponseEntity<BankerLoginResponseDto> loginUser(@Valid @RequestBody BankerLoginDto bankerLoginDto) {
         BankerLoginRequest companyLoginRequest = bankerLoginMapper.fromDto(bankerLoginDto);
         BankerLoginEntity companyLoginEntity = bankerLoginService.loginUser(companyLoginRequest);
         BankerLoginResponseDto bankerLoginResponseDto = bankerLoginMapper.toDto(companyLoginEntity);
