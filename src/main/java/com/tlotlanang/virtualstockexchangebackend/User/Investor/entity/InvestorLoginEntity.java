@@ -12,7 +12,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "BrokerAccount")
+@Table(name = "InvestorAccount")
 @Data
 @Builder
 @NoArgsConstructor
