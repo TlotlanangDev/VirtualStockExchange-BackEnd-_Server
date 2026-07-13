@@ -8,9 +8,11 @@ import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.mapper.Com
 import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.service.CompanyRegisterService;
 
 import com.tlotlanang.virtualstockexchangebackend.User.RegisterUser;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +26,7 @@ public class CompanyRegisterController implements RegisterUser<CompanyRegisterRe
     public CompanyRegisterMapper companyRegisterMapper;
 
     @Override
-    public ResponseEntity<CompanyRegisterResponseDto> registerUser(CompanyRegisterDto companyRegisterDto) {
+    public ResponseEntity<CompanyRegisterResponseDto> registerUser(@Valid @RequestBody CompanyRegisterDto companyRegisterDto) {
         CompanyRegisterRequest investorRequest = companyRegisterMapper.fromDto(companyRegisterDto);
         CompanyRegisterEntity investorEntity = companyRegisterService.createUser(investorRequest);
         CompanyRegisterResponseDto investorResponseDto = companyRegisterMapper.toDto(investorEntity);

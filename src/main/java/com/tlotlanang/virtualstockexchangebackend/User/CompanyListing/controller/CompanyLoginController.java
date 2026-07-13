@@ -7,9 +7,11 @@ import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.Com
 import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.mapper.CompanyLoginMapper;
 import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.service.CompanyLoginService;
 import com.tlotlanang.virtualstockexchangebackend.User.LoginUser;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +26,7 @@ public class CompanyLoginController implements LoginUser<CompanyLoginResponseDto
     private CompanyLoginMapper companyLoginMapper;
 
     @Override
-    public ResponseEntity<CompanyLoginResponseDto> loginUser(CompanyLoginDto companyLoginDto) {
+    public ResponseEntity<CompanyLoginResponseDto> loginUser(@Valid @RequestBody CompanyLoginDto companyLoginDto) {
         CompanyLoginRequest companyLoginRequest = companyLoginMapper.fromDto(companyLoginDto);
         CompanyLoginEntity companyLoginEntity = companyLoginService.loginUser(companyLoginRequest);
         CompanyLoginResponseDto companyLoginResponseDto = companyLoginMapper.toDto(companyLoginEntity);
