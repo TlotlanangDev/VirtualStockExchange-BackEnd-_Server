@@ -4,11 +4,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-public interface LoginUser<ResponseDto,RequestDto>{
+public interface LoginUser<LoginResponseDto, LoginRequestDto>{
 
 
     @GetMapping("/login")
-    ResponseEntity<ResponseDto> loginUser(@RequestBody RequestDto requestBody);
+    ResponseEntity<LoginResponseDto> loginUser(@RequestBody LoginRequestDto requestBody);
 
 
 }
