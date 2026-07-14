@@ -1,9 +1,6 @@
 package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +9,6 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Entity
 @Table(name = "CompanyAccount")
@@ -21,10 +17,10 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CompanyRegisterEntity {
+
         @Id
-        @GeneratedValue
-        @UuidGenerator
-        private UUID uuid;
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Integer id;
         @NotBlank(message = "Please Enter your Name.")
         @Size(min = 2, max = 50, message = "name must be between 2 & 50 characters.")
         private String name;

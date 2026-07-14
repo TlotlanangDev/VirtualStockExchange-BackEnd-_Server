@@ -7,6 +7,7 @@ import java.time.LocalDate;
 @Builder
 
 public record CompanyRegisterRequest(
+        Integer id,
         String name,
         String surName,
         LocalDate dateOfBirth,

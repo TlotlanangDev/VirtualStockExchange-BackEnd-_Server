@@ -18,7 +18,7 @@ public class CompanyRegisterServiceImplement implements CompanyRegisterService {
     public CompanyRegisterEntity createUser(CompanyRegisterRequest companyRegisterRequest) {
 
         CompanyRegisterEntity companyRegisterEntity = new CompanyRegisterEntity(
-                null,
+                companyRegisterRequest.id(),
                 companyRegisterRequest.name(),
                 companyRegisterRequest.surName(),
                 companyRegisterRequest.dateOfBirth(),

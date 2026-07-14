@@ -1,6 +1,7 @@
 package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain;
 
 
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 
@@ -8,7 +9,8 @@ import java.time.LocalDate;
 
 @Builder
 public record CompanyRegisterDto(
-
+         
+         Integer id,
          @NotBlank(message = "Please Enter your Name.")
          @Size(min = 2, max = 50, message = "name must be between 2 & 50 characters.")
          String name,

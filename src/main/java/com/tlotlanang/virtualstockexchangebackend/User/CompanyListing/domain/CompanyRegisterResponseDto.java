@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Builder
 public record CompanyRegisterResponseDto(
-        UUID Id,
+        Integer Id,
         String name,
         String surName,
         LocalDate dateOfBirth,

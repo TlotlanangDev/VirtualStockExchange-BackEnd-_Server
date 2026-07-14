@@ -11,6 +11,7 @@ public class CompanyRegisterMapperImpl implements CompanyRegisterMapper {
     @Override
     public CompanyRegisterRequest fromDto(CompanyRegisterDto companyRegisterDto) {
         return new CompanyRegisterRequest(
+                companyRegisterDto.id(),
                 companyRegisterDto.name(),
                 companyRegisterDto.surName(),
                 companyRegisterDto.dateOfBirth(),
@@ -22,7 +23,7 @@ public class CompanyRegisterMapperImpl implements CompanyRegisterMapper {
     @Override
     public CompanyRegisterResponseDto toDto(CompanyRegisterEntity companyRegisterEntity) {
         return new CompanyRegisterResponseDto(
-                companyRegisterEntity.getUuid(),
+                companyRegisterEntity.getId(),
                 companyRegisterEntity.getName(),
                 companyRegisterEntity.getSurName(),
                 companyRegisterEntity.getDateOfBirth(),
