@@ -25,10 +25,10 @@ class CompanyRegisterDtoTest {
     public void setCompanyDto_passValidInfo_returnDataPassed(){
         CompanyRegisterDto companyRegisterDto = CompanyRegisterDto.builder()
 
-                .name("Tlotlanang")
-                .surName("Gabonewe")
-                .dateOfBirth(LocalDate.of(2002,9,1))
-                .phoneNumber("0787058697")
+                .companyName("Tlotlanang")
+                .registrationNumber("Gabonewe")
+                .registrationDate(LocalDate.of(2002,9,1))
+                .telePhone("0787058697")
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
@@ -49,10 +49,10 @@ class CompanyRegisterDtoTest {
     public void setCompanyDto_passInValidInfo_returnData(){
         CompanyRegisterDto companyRegisterDto = CompanyRegisterDto.builder()
 
-                .name("d")
-                .surName("s")
-                .dateOfBirth(LocalDate.of(2032,9,1))
-                .phoneNumber("fd0787058697")
+                .companyName("d")
+                .registrationNumber("s")
+                .registrationDate(LocalDate.of(2032,9,1))
+                .telePhone("fd0787058697")
                 .emailAddress("Tlotlananggmailcom")
                 .passWord("").build();
 
@@ -64,9 +64,9 @@ class CompanyRegisterDtoTest {
 
         Assertions.assertThat(violations).isNotEmpty();
         Assertions.assertThat(failedProperties).contains("name",
-                "surName",
-                "dateOfBirth",
-                "phoneNumber",
+                "registrationNumber",
+                "registrationDate",
+                "telePhone",
                 "emailAddress",
                 "passWord");
 

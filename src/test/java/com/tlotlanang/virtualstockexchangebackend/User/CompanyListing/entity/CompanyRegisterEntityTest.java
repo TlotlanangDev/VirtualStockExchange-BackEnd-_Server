@@ -25,11 +25,11 @@ class CompanyRegisterEntityTest {
     @Test
     public void setCompanyEntity_passValidInfo_returnDataPassed(){
         CompanyRegisterEntity companyRegisterEntity = CompanyRegisterEntity.builder()
-                .uuid(null)
-                .name("Tlotlanang")
-                .surName("Gabonewe")
-                .dateOfBirth(LocalDate.of(2002,9,1))
-                .phoneNumber("0787058697")
+                .id(null)
+                .companyName("Tlotlanang")
+                .registrationNumber("Gabonewe")
+                .registrationDate(LocalDate.of(2002,9,1))
+                .telePhone("0787058697")
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
@@ -48,10 +48,10 @@ class CompanyRegisterEntityTest {
     public void setCompanyEntity_passInValidInfo_returnData(){
         CompanyRegisterEntity companyRegisterEntity = CompanyRegisterEntity.builder()
 
-                .name("d")
-                .surName("s")
-                .dateOfBirth(LocalDate.of(2032,9,1))
-                .phoneNumber("fd0787058697")
+                .companyName("d")
+                .registrationNumber("s")
+                .registrationDate(LocalDate.of(2032,9,1))
+                .telePhone("fd0787058697")
                 .emailAddress("Tlotlananggmailcom")
                 .passWord("").build();
 
@@ -63,9 +63,9 @@ class CompanyRegisterEntityTest {
 
         Assertions.assertThat(violations).isNotEmpty();
         Assertions.assertThat(failedProperties).contains("name",
-                "surName",
-                "dateOfBirth",
-                "phoneNumber",
+                "registrationNumber",
+                "registrationDate",
+                "telePhone",
                 "emailAddress",
                 "passWord");
 

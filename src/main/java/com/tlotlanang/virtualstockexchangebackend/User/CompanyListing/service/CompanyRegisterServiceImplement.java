@@ -19,10 +19,10 @@ public class CompanyRegisterServiceImplement implements CompanyRegisterService {
 
         CompanyRegisterEntity companyRegisterEntity = new CompanyRegisterEntity(
                 companyRegisterRequest.id(),
-                companyRegisterRequest.name(),
-                companyRegisterRequest.surName(),
-                companyRegisterRequest.dateOfBirth(),
-                companyRegisterRequest.phoneNumber(),
+                companyRegisterRequest.companyName(),
+                companyRegisterRequest.registrationNumber(),
+                companyRegisterRequest.registrationDate(),
+                companyRegisterRequest.telePhone(),
                 companyRegisterRequest.emailAddress(),
                 companyRegisterRequest.passWord()
         );

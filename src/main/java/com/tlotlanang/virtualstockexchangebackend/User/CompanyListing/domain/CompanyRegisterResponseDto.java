@@ -8,10 +8,10 @@ import java.util.UUID;
 @Builder
 public record CompanyRegisterResponseDto(
         Integer Id,
-        String name,
-        String surName,
-        LocalDate dateOfBirth,
-        String phoneNumber,
+        String companyName,
+        String registrationNumber,
+        LocalDate registrationDate,
+        String telePhone,
         String emailAddress
         //String passWord
 ) {

@@ -28,20 +28,20 @@ class CompanyRegisterServiceImplementTest {
     public void testSaveToRepository(){
 
         CompanyRegisterEntity companyRegisterEntity = CompanyRegisterEntity.builder()
-                .uuid(null)
-                .name("Tlotlanang")
-                .surName("Gabonewe")
-                .dateOfBirth(LocalDate.of(2002,9,1))
-                .phoneNumber("0787060708")
+                .id(null)
+                .companyName("Tlotlanang")
+                .registrationNumber("Gabonewe")
+                .registrationDate(LocalDate.of(2002,9,1))
+                .telePhone("0787060708")
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
         CompanyRegisterRequest companyRegisterRequest = CompanyRegisterRequest.builder()
                 //.Id(null)
-                .name("Tlotlanang")
-                .surName("Gabonewe")
-                .dateOfBirth(LocalDate.of(2002,9,1))
-                .phoneNumber("0787060708")
+                .companyName("Tlotlanang")
+                .registrationNumber("Gabonewe")
+                .registrationDate(LocalDate.of(2002,9,1))
+                .telePhone("0787060708")
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
@@ -52,11 +52,11 @@ class CompanyRegisterServiceImplementTest {
         CompanyRegisterEntity savedRepository = companyServiceImplement.createUser(companyRegisterRequest);
 
         Assertions.assertThat(savedRepository).isNotNull();
-        Assertions.assertThat(savedRepository.getUuid()).isNull();
-        Assertions.assertThat(savedRepository.getName()).isEqualTo("Tlotlanang").isNotNull();
-        Assertions.assertThat(savedRepository.getSurName()).isEqualTo("Gabonewe").isNotNull();
-        Assertions.assertThat(savedRepository.getDateOfBirth()).isEqualTo(LocalDate.of(2002,9,1)).isNotNull();
-        Assertions.assertThat(savedRepository.getPhoneNumber()).isEqualTo("0787060708").isNotNull();
+        Assertions.assertThat(savedRepository.getId()).isNull();
+        Assertions.assertThat(savedRepository.getCompanyName()).isEqualTo("Tlotlanang").isNotNull();
+        Assertions.assertThat(savedRepository.getRegistrationNumber()).isEqualTo("Gabonewe").isNotNull();
+        Assertions.assertThat(savedRepository.getRegistrationDate()).isEqualTo(LocalDate.of(2002,9,1)).isNotNull();
+        Assertions.assertThat(savedRepository.getTelePhone()).isEqualTo("0787060708").isNotNull();
         Assertions.assertThat(savedRepository.getEmailAddress()).isEqualTo("Tlotlanang@gmail.com").isNotNull();
         Assertions.assertThat(savedRepository.getPassWord()).isEqualTo("ergdg43gr").isNotNull();
 

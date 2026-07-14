@@ -12,10 +12,10 @@ public class CompanyRegisterMapperImpl implements CompanyRegisterMapper {
     public CompanyRegisterRequest fromDto(CompanyRegisterDto companyRegisterDto) {
         return new CompanyRegisterRequest(
                 companyRegisterDto.id(),
-                companyRegisterDto.name(),
-                companyRegisterDto.surName(),
-                companyRegisterDto.dateOfBirth(),
-                companyRegisterDto.phoneNumber(),
+                companyRegisterDto.companyName(),
+                companyRegisterDto.registrationNumber(),
+                companyRegisterDto.registrationDate(),
+                companyRegisterDto.telePhone(),
                 companyRegisterDto.emailAddress(),
                 companyRegisterDto.passWord());
     }
@@ -24,10 +24,10 @@ public class CompanyRegisterMapperImpl implements CompanyRegisterMapper {
     public CompanyRegisterResponseDto toDto(CompanyRegisterEntity companyRegisterEntity) {
         return new CompanyRegisterResponseDto(
                 companyRegisterEntity.getId(),
-                companyRegisterEntity.getName(),
-                companyRegisterEntity.getSurName(),
-                companyRegisterEntity.getDateOfBirth(),
-                companyRegisterEntity.getPhoneNumber(),
+                companyRegisterEntity.getCompanyName(),
+                companyRegisterEntity.getRegistrationNumber(),
+                companyRegisterEntity.getRegistrationDate(),
+                companyRegisterEntity.getTelePhone(),
                 companyRegisterEntity.getEmailAddress()
                 //companyRegisterEntity.getPassWord()
         );

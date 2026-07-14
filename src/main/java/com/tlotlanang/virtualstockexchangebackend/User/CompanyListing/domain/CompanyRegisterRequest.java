@@ -8,10 +8,10 @@ import java.time.LocalDate;
 
 public record CompanyRegisterRequest(
         Integer id,
-        String name,
-        String surName,
-        LocalDate dateOfBirth,
-        String phoneNumber,
+        String companyName,
+        String registrationNumber,
+        LocalDate registrationDate,
+        String telePhone,
         String emailAddress,
         String passWord
 ) {

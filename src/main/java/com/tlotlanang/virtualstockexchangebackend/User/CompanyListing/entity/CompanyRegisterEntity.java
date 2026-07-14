@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDate;
 
@@ -21,18 +20,20 @@ public class CompanyRegisterEntity {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer id;
-        @NotBlank(message = "Please Enter your Name.")
-        @Size(min = 2, max = 50, message = "name must be between 2 & 50 characters.")
-        private String name;
-        @NotBlank(message = "Please Enter your surName.")
+        @NotBlank(message = "Please Enter Company Name.")
+        @Size(min = 2, max = 50, message = "Company companyName must be between 2 & 50 characters.")
+        private String companyName;
+        @NotBlank(message = "Please Enter your Company Registration Number.")
         @Size(min = 2, max = 50, message = "surname must be between 2 & 50 characters.")
-        private String surName;
-        @NotNull(message = "Please Enter Date of Birth.")
-        @Past(message = "Enter Correct Date of Birth.")
-        private LocalDate dateOfBirth;
+        @Pattern(regexp = "^\\d{4}\\/\\d{4,6}\\/\\d{2}$\n",
+                message = "Please Enter Correct Registration Number")
+        private String registrationNumber;
+        @NotNull(message = "Please Enter Company Registration Date.")
+        @Past(message = "Enter Correct Registration Date.")
+        private LocalDate registrationDate;
         @Pattern(regexp = "^(\\+27|0)[1-9][0-9\\s\\-]{8,}$",
-                message = "Please Enter Correct Phone Number")
-        private String phoneNumber;
+                message = "Please Enter Correct Telephone Number")
+        private String telePhone;
         @Size(min = 5, max = 50, message = "Email Address must be between 5 & 50 characters.")
         @Email(message = "Please Enter valid Email Address.")
         @NotBlank(message = "Please Enter Email address.")

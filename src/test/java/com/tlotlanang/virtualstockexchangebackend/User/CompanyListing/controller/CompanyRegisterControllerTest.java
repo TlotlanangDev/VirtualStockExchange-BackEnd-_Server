@@ -47,24 +47,24 @@ class CompanyRegisterControllerTest {
     void CompanyController_createUser_ReturnCreatedStatus() throws Exception {
 
         CompanyRegisterDto companyRegisterDto = CompanyRegisterDto.builder()
-                .name("Tlotlanang")
-                .surName("Gabonewe")
-                .dateOfBirth(LocalDate.of(2002, 9, 1))
-                .phoneNumber("0787060708")
+                .companyName("Tlotlanang")
+                .registrationNumber("Gabonewe")
+                .registrationDate(LocalDate.of(2002, 9, 1))
+                .telePhone("0787060708")
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr")
                 .build();
 
         CompanyRegisterResponseDto expectedResponse = CompanyRegisterResponseDto.builder()
-                .name("Tlotlanang")
-                .surName("Gabonewe")
-                .dateOfBirth(LocalDate.of(2004,9,6))
-                .phoneNumber("0786959588")
+                .companyName("Tlotlanang")
+                .registrationNumber("Gabonewe")
+                .registrationDate(LocalDate.of(2004,9,6))
+                .telePhone("0786959588")
                 .emailAddress("fdgdg")
                 .build();
 
         given(companyRegisterMapper.fromDto(ArgumentMatchers.any(CompanyRegisterDto.class)))
-                .willReturn(new CompanyRegisterRequest("Thabo", "gman",
+                .willReturn(new CompanyRegisterRequest(null,"Thabo", "gman",
                         LocalDate.of(2004,9,7), "0797978797",
                         "dgdgd@gmail.com", "vdsfvs"));
 
@@ -79,14 +79,14 @@ class CompanyRegisterControllerTest {
                 .content(objectMapper.writeValueAsString(companyRegisterDto)));
 
         response.andExpect(MockMvcResultMatchers.status().isCreated()).andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.name",
-                        org.hamcrest.CoreMatchers.is(expectedResponse.name())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.surName",
-                        org.hamcrest.CoreMatchers.is(expectedResponse.surName())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.dateOfBirth",
-                        org.hamcrest.CoreMatchers.is(expectedResponse.dateOfBirth().toString())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.phoneNumber",
-                        org.hamcrest.CoreMatchers.is(expectedResponse.phoneNumber())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.companyName",
+                        org.hamcrest.CoreMatchers.is(expectedResponse.companyName())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.registrationNumber",
+                        org.hamcrest.CoreMatchers.is(expectedResponse.registrationNumber())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.registrationDate",
+                        org.hamcrest.CoreMatchers.is(expectedResponse.registrationDate().toString())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.telePhone",
+                        org.hamcrest.CoreMatchers.is(expectedResponse.telePhone())))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.emailAddress",
                         org.hamcrest.CoreMatchers.is(expectedResponse.emailAddress())));
 
