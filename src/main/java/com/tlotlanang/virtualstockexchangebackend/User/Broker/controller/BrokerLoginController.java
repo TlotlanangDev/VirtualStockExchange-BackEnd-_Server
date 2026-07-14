@@ -24,7 +24,7 @@ public class BrokerLoginController implements LoginUser<BrokerLoginResponseDto, 
     private BrokerLoginMapper brokerLoginMapper;
 
     @Override
-    public ResponseEntity<BrokerLoginResponseDto> loginUser(@Valid @RequestBody BrokerLoginDto brokerLoginDto) {
+    public ResponseEntity<BrokerLoginResponseDto> loginUser(@Valid BrokerLoginDto brokerLoginDto) {
         BrokerLoginRequest brokerLoginRequest = brokerLoginMapper.fromDto(brokerLoginDto);
         BrokerLoginEntity brokerLoginEntity = brokerLoginService.loginUser(brokerLoginRequest);
         BrokerLoginResponseDto brokerLoginResponseDto = brokerLoginMapper.toDto(brokerLoginEntity);

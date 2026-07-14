@@ -26,7 +26,7 @@ public class InvestorLoginController implements LoginUser<InvestorLoginResponseD
     private InvestorLoginMapper investorLoginMapper;
 
     @Override
-    public ResponseEntity<InvestorLoginResponseDto> loginUser(@Valid @RequestBody InvestorLoginDto investorLoginDto) {
+    public ResponseEntity<InvestorLoginResponseDto> loginUser(@Valid InvestorLoginDto investorLoginDto) {
         InvestorLoginRequest investorLoginRequest = investorLoginMapper.fromDto(investorLoginDto);
         InvestorLoginEntity investorLoginEntity = investorLoginService.loginUser(investorLoginRequest);
         InvestorLoginResponseDto bankerLoginResponseDto = investorLoginMapper.toDto(investorLoginEntity);

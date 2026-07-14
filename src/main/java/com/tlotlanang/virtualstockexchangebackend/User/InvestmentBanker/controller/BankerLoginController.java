@@ -27,7 +27,7 @@ public class BankerLoginController implements LoginUser<BankerLoginResponseDto, 
     private BankerLoginMapper bankerLoginMapper;
 
     @Override
-    public ResponseEntity<BankerLoginResponseDto> loginUser(@Valid @RequestBody BankerLoginDto bankerLoginDto) {
+    public ResponseEntity<BankerLoginResponseDto> loginUser(@Valid BankerLoginDto bankerLoginDto) {
         BankerLoginRequest companyLoginRequest = bankerLoginMapper.fromDto(bankerLoginDto);
         BankerLoginEntity companyLoginEntity = bankerLoginService.loginUser(companyLoginRequest);
         BankerLoginResponseDto bankerLoginResponseDto = bankerLoginMapper.toDto(companyLoginEntity);

@@ -26,7 +26,7 @@ public class CompanyLoginController implements LoginUser<CompanyLoginResponseDto
     private CompanyLoginMapper companyLoginMapper;
 
     @Override
-    public ResponseEntity<CompanyLoginResponseDto> loginUser(@Valid @RequestBody CompanyLoginDto companyLoginDto) {
+    public ResponseEntity<CompanyLoginResponseDto> loginUser(@Valid CompanyLoginDto companyLoginDto) {
         CompanyLoginRequest companyLoginRequest = companyLoginMapper.fromDto(companyLoginDto);
         CompanyLoginEntity companyLoginEntity = companyLoginService.loginUser(companyLoginRequest);
         CompanyLoginResponseDto companyLoginResponseDto = companyLoginMapper.toDto(companyLoginEntity);
