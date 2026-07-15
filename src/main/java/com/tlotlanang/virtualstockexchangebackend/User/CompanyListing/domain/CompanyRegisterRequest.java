@@ -2,6 +2,7 @@ package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain;
 
 import lombok.Builder;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Builder
@@ -13,6 +14,8 @@ public record CompanyRegisterRequest(
         LocalDate registrationDate,
         String telePhone,
         String emailAddress,
-        String passWord
+        String passWord,
+        Integer stockShare,
+        BigDecimal pricePerShare
 ) {
 }

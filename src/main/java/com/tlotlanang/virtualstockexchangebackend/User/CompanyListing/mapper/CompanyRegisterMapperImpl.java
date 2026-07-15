@@ -17,7 +17,9 @@ public class CompanyRegisterMapperImpl implements CompanyRegisterMapper {
                 companyRegisterDto.registrationDate(),
                 companyRegisterDto.telePhone(),
                 companyRegisterDto.emailAddress(),
-                companyRegisterDto.passWord());
+                companyRegisterDto.passWord(),
+                companyRegisterDto.stockShare(),
+                companyRegisterDto.pricePerShare());
     }
 
     @Override
@@ -28,8 +30,10 @@ public class CompanyRegisterMapperImpl implements CompanyRegisterMapper {
                 companyRegisterEntity.getRegistrationNumber(),
                 companyRegisterEntity.getRegistrationDate(),
                 companyRegisterEntity.getTelePhone(),
-                companyRegisterEntity.getEmailAddress()
-                //companyRegisterEntity.getPassWord()
+                companyRegisterEntity.getEmailAddress(),
+                companyRegisterEntity.getStockShare(),
+                companyRegisterEntity.getPricePerShare()
+
         );
     }
 }

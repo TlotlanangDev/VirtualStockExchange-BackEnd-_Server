@@ -24,7 +24,9 @@ public class CompanyRegisterServiceImplement implements CompanyRegisterService {
                 companyRegisterRequest.registrationDate(),
                 companyRegisterRequest.telePhone(),
                 companyRegisterRequest.emailAddress(),
-                companyRegisterRequest.passWord()
+                companyRegisterRequest.passWord(),
+                companyRegisterRequest.stockShare(),
+                companyRegisterRequest.pricePerShare()
         );
         return userregisterrepository.save(companyRegisterEntity);
     }

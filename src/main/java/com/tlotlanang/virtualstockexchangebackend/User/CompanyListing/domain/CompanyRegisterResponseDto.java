@@ -2,6 +2,7 @@ package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain;
 
 import lombok.Builder;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -12,7 +13,9 @@ public record CompanyRegisterResponseDto(
         String registrationNumber,
         LocalDate registrationDate,
         String telePhone,
-        String emailAddress
+        String emailAddress,
+        Integer stockShare,
+        BigDecimal pricePerShare
         //String passWord
 ) {
 }
