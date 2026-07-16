@@ -1,13 +1,16 @@
 package com.tlotlanang.virtualstockexchangebackend.Board;
 
+import jakarta.validation.Valid;
+import org.springframework.data.domain.Pageable;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.SlicedModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.Collection;
-
 public interface Board <BoardResponseDto, BoardRequestDto>{
 
     @GetMapping("/listings")
-    Collection<BoardResponseDto> listings(@RequestBody BoardRequestDto requestBody);
+
+    ResponseEntity<SlicedModel<EntityModel<BoardResponseDto>>>Temporarylisting(@Valid @RequestBody BoardRequestDto requestBody, Pageable pageable );
 }
