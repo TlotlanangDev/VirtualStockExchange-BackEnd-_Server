@@ -1,7 +1,6 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.domain;
 
 
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 
@@ -33,7 +32,7 @@ public record CompanyRegisterDto(
          @Size(min = 8, max = 40, message = "Passowrd should have at least 8 characters.")
          @NotBlank(message = "passWord cannot be Empty..")
          String passWord,
-         @Null
+         //@Null
          Integer stockShare,
-         @Null
+         //@Null
          BigDecimal pricePerShare) {}

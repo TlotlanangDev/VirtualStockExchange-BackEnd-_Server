@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

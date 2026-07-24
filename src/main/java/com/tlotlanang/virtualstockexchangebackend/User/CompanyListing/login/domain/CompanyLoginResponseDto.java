@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.domain;
 
 import lombok.Builder;
 

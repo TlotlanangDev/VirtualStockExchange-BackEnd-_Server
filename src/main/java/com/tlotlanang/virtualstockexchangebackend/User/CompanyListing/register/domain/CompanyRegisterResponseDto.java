@@ -1,10 +1,9 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.domain;
 
 import lombok.Builder;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Builder
 public record CompanyRegisterResponseDto(

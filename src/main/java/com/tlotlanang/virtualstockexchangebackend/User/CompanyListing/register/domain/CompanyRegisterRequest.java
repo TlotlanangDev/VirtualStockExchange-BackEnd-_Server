@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.domain;
 
 import lombok.Builder;
 
@@ -16,6 +16,4 @@ public record CompanyRegisterRequest(
         String emailAddress,
         String passWord,
         Integer stockShare,
-        BigDecimal pricePerShare
-) {
-}
+        BigDecimal pricePerShare) {}

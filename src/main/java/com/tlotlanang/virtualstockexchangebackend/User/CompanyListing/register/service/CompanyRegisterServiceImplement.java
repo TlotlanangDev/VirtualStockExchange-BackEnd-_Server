@@ -1,8 +1,8 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.service;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.service;
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.CompanyRegisterEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.repository.CompanyRegisterRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.domain.CompanyRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.entity.CompanyRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.repository.CompanyRegisterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

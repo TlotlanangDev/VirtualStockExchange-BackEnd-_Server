@@ -1,9 +1,9 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.mapper;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.mapper;
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyLoginDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyLoginRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyLoginResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.CompanyLoginEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.domain.CompanyLoginDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.domain.CompanyLoginRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.domain.CompanyLoginResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.entity.CompanyLoginEntity;
 import org.springframework.stereotype.Component;
 
 @Component

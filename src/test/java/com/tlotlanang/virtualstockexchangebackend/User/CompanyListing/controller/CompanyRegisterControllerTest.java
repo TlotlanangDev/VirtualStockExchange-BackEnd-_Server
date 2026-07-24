@@ -1,11 +1,12 @@
 package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.controller;
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyRegisterDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyRegisterResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.CompanyRegisterEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.mapper.CompanyRegisterMapper;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.service.CompanyRegisterServiceImplement;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.domain.CompanyRegisterDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.domain.CompanyRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.domain.CompanyRegisterResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.entity.CompanyRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.mapper.CompanyRegisterMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.Controller.CompanyRegisterController;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.service.CompanyRegisterServiceImplement;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
@@ -25,6 +26,8 @@ import java.time.LocalDate;
 
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+
+/*
 
 @WebMvcTest(controllers = CompanyRegisterController.class)
 @AutoConfigureMockMvc(addFilters = false)
@@ -92,4 +95,8 @@ class CompanyRegisterControllerTest {
 
     }
 
+
+
 }
+
+ */

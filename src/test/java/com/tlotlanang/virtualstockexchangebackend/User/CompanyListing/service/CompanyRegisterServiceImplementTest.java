@@ -1,9 +1,10 @@
 package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.service;
 
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.CompanyRegisterEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.repository.CompanyRegisterRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.domain.CompanyRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.entity.CompanyRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.repository.CompanyRegisterRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.service.CompanyRegisterServiceImplement;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

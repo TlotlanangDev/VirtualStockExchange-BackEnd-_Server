@@ -1,12 +1,10 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.service;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.service;
 
-import com.tlotlanang.virtualstockexchangebackend.Trading.StockTrader;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain.CompanyLoginRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.CompanyLoginEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.repository.CompanyLoginRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.domain.CompanyLoginRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.entity.CompanyLoginEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.repository.CompanyLoginRepository;
 import com.tlotlanang.virtualstockexchangebackend.globalExceptionHandler.exception.EmailPassException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service

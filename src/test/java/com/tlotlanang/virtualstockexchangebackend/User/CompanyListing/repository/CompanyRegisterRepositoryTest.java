@@ -1,7 +1,8 @@
 package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.repository;
 
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity.CompanyRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.entity.CompanyRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.repository.CompanyRegisterRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
