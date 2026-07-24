@@ -4,7 +4,9 @@ import com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.Entity.Te
 import com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.domain.TemporaryBoardDto;
 import com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.domain.TemporaryBoardRequest;
 import com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.domain.TemporaryBoardResponseDto;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TemporaryBoardMapperImpl implements TemporaryBoardMapper{
     @Override
     public TemporaryBoardRequest fromDto(TemporaryBoardDto temporaryBoardDto) {
@@ -12,9 +14,6 @@ public class TemporaryBoardMapperImpl implements TemporaryBoardMapper{
                 temporaryBoardDto.id(),
                 temporaryBoardDto.companyName(),
                 temporaryBoardDto.registrationNumber(),
-                temporaryBoardDto.registrationDate(),
-                temporaryBoardDto.telePhone(),
-                temporaryBoardDto.emailAddress(),
                 temporaryBoardDto.stockShare(),
                 temporaryBoardDto.pricePerShare());
     }
@@ -25,9 +24,6 @@ public class TemporaryBoardMapperImpl implements TemporaryBoardMapper{
                 temporaryBoardEntity.getId(),
                 temporaryBoardEntity.getCompanyName(),
                 temporaryBoardEntity.getRegistrationNumber(),
-                temporaryBoardEntity.getRegistrationDate(),
-                temporaryBoardEntity.getTelePhone(),
-                temporaryBoardEntity.getEmailAddress(),
                 temporaryBoardEntity.getStockShare(),
                 temporaryBoardEntity.getPricePerShare());
     }

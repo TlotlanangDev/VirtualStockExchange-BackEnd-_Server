@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 import java.util.List;
 
-@RestController
-public class SellBoardController implements Board<SellBoardResponseDto, SellBoardRequestDto> {
+//@RestController
+public class SellBoardController implements Board<SellBoardResponseDto> {
 
 
     @Override
-    public ResponseEntity<SlicedModel<EntityModel<SellBoardResponseDto>>> Temporarylisting(SellBoardRequestDto requestBody, Pageable pageable) {
+    public ResponseEntity<SlicedModel<EntityModel<SellBoardResponseDto>>> temporarylisting(Pageable pageable) {
         return null;
     }
 }

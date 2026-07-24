@@ -21,7 +21,7 @@ public class BrokerLoginServiceImpl implements BrokerLoginService {
                          companyLoginRequest.passWord());
         return brokerLoginRepository.
                findById(companyLoginEntity
-               .getEmailAddress()).map(brokerEntity ->
+                       .getEmailAddress()).map(brokerEntity ->
                {if(brokerEntity.getPassWord().equals(companyLoginEntity.getPassWord())){return brokerEntity;}
                throw new EmailPassException("PassWord and Email do not match.");})
                .orElseThrow(() -> new EmailPassException("Email not found"));

@@ -12,7 +12,7 @@ import java.time.LocalDate;
 
 
 @Entity
-@Table(name = "TemporaryBoardlisting")
+@Table(name = "TemporaryListingAcc")
 @Data
 @Builder
 @NoArgsConstructor
@@ -30,21 +30,12 @@ public class TemporaryBoardEntity {
     @Pattern(regexp = "^\\d{4}/\\d{6}/\\d{2}$",
             message = "Please Enter Correct Registration Number")
     private String registrationNumber;
-    @NotNull(message = "Please Enter Company Registration Date.")
-    @Past(message = "Enter Correct Registration Date.")
-    private LocalDate registrationDate;
-    @Pattern(regexp = "^(\\+27|0)[1-9]\\d{8}$",
-            message = "Please Enter Correct Telephone Number")
-    private String telePhone;
-    @Size(min = 5, max = 50, message = "Email Address must be between 5 & 50 characters.")
-    @Email(message = "Please Enter valid Email Address.")
-    @NotBlank(message = "Please Enter Email address.")
-    private String emailAddress;
-    @Size(min = 8, max = 40, message = "Passowrd should have at least 8 characters.")
-    @NotBlank(message = "passWord cannot be Empty..")
-    private String passWord;
-
+    @NotNull(message = "Stock Share cannot be null")
+    @Positive(message = "Shares must be greater that zero.")
+    @Digits(message = "Share must be digits.", integer = 10000, fraction = 0)
     private Integer stockShare;
-
+    @NotNull(message = "Stock Price cannot be null")
+    @Positive(message = "Price must be greater that zero.")
+    @Digits(message = "", integer = 1000, fraction = 2)
     private BigDecimal pricePerShare;
 }

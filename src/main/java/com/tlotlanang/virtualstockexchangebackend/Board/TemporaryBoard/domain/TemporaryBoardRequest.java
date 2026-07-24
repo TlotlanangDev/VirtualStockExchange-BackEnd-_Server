@@ -11,9 +11,6 @@ public record TemporaryBoardRequest(
         Integer Id,
         String companyName,
         String registrationNumber,
-        LocalDate registrationDate,
-        String telePhone,
-        String emailAddress,
         Integer stockShare,
         BigDecimal pricePerShare
 ) {}

@@ -2,14 +2,11 @@ package com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.Controll
 
 import com.tlotlanang.virtualstockexchangebackend.Board.Board;
 import com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.Entity.TemporaryBoardEntity;
-import com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.domain.TemporaryBoardDto;
-import com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.domain.TemporaryBoardRequest;
 import com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.domain.TemporaryBoardResponseDto;
 import com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.mapper.TemporaryBoardMapper;
 import com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.service.TemporaryBoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
 import org.springframework.data.web.SlicedResourcesAssembler;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.SlicedModel;
@@ -23,8 +20,8 @@ The Temporary board is only visible to Investment bankers, these are submitted l
 approved or rejected by Investment bankers, approval would list them on the main board for trading.
  */
 @RestController
-@RequestMapping("api/v1/stockExchange/templisting")
-public class TemporaryBoardController implements Board<TemporaryBoardResponseDto, TemporaryBoardDto> {
+@RequestMapping("api/v1/stockExchange/temporaryboard")
+public class TemporaryBoardController implements Board<TemporaryBoardResponseDto>{
 
     @Autowired
     private TemporaryBoardService temporaryBoardService;
@@ -35,18 +32,15 @@ public class TemporaryBoardController implements Board<TemporaryBoardResponseDto
     @Autowired
     private SlicedResourcesAssembler<TemporaryBoardEntity> slicedAssembler;
 
-
     @Override
-    public ResponseEntity<SlicedModel<EntityModel<TemporaryBoardResponseDto>>> Temporarylisting(TemporaryBoardDto temporaryBoardDto, Pageable pageable) {
+    public ResponseEntity<SlicedModel<EntityModel<TemporaryBoardResponseDto>>> temporarylisting(Pageable pageable) {
+        var entitySlice = temporaryBoardService.getListings(pageable);
 
-        TemporaryBoardRequest temporaryBoardRequest = temporaryBoardMapper.fromDto(temporaryBoardDto);
-        Slice<TemporaryBoardEntity> entitySlice = (Slice<TemporaryBoardEntity>) temporaryBoardService
-                                                  .submitlisting(temporaryBoardRequest, pageable);
-        SlicedModel<EntityModel<TemporaryBoardResponseDto>> slicedModel = slicedAssembler
-                .toModel(entitySlice, entity -> EntityModel.of(temporaryBoardMapper.toDto(entity))
+        SlicedModel<EntityModel<TemporaryBoardResponseDto>> slicedModel = slicedAssembler.toModel(
+                entitySlice,
+                entity -> EntityModel.of(temporaryBoardMapper.toDto(entity))
         );
 
         return ResponseEntity.ok(slicedModel);
-
     }
 }

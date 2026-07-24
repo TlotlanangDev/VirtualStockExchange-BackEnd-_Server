@@ -5,25 +5,20 @@ import com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.domain.Te
 import com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.repository.TemporaryBoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TemporaryBoardServiceImpl implements TemporaryBoardService{
 
     @Autowired
     private TemporaryBoardRepository temporaryBoardRepository;
 
     @Override
-    public TemporaryBoardEntity submitlisting(TemporaryBoardRequest temporaryBoardRequest, Pageable pageable) {
-        TemporaryBoardEntity temporaryBoardEntity = new TemporaryBoardEntity(
-                temporaryBoardRequest.Id(),
-                temporaryBoardRequest.companyName(),
-                temporaryBoardRequest.registrationNumber(),
-                temporaryBoardRequest.registrationDate(),
-                temporaryBoardRequest.telePhone(),
-                temporaryBoardRequest.emailAddress(),
-                temporaryBoardRequest.companyName(),
-                temporaryBoardRequest.stockShare(),
-                temporaryBoardRequest.pricePerShare());
+    public Slice<TemporaryBoardEntity> getListings( Pageable pageable) {
 
-        return temporaryBoardRepository.save(temporaryBoardEntity);
+
+
+        return temporaryBoardRepository.findBy(pageable);
     }
 }
