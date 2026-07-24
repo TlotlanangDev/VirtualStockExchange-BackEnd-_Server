@@ -1,8 +1,9 @@
 package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.service;
 
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.entity.BankerRegisterEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.repository.BankerRegisterRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.register.domain.BankerRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.register.entity.BankerRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.register.repository.BankerRegisterRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.register.service.BankerRegisterServiceImplement;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

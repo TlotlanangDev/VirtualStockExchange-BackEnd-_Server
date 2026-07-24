@@ -1,6 +1,7 @@
 package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.entity;
 
 
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.register.entity.BankerRegisterEntity;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;

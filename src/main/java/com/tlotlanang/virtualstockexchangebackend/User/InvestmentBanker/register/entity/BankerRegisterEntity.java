@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.entity;
+package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.register.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
