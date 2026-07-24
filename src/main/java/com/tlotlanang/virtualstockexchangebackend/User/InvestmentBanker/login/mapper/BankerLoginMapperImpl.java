@@ -1,10 +1,10 @@
-package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.mapper;
+package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.login.mapper;
 
 
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerLoginDto;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerLoginRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerLoginResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.entity.BankerLoginEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.login.domain.BankerLoginDto;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.login.domain.BankerLoginRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.login.domain.BankerLoginResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.login.entity.BankerLoginEntity;
 import org.springframework.stereotype.Component;
 
 @Component

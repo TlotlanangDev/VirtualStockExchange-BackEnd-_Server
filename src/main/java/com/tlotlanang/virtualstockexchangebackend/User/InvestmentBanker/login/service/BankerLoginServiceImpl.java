@@ -1,9 +1,9 @@
-package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.service;
+package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.login.service;
 
 
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.domain.BankerLoginRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.entity.BankerLoginEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.repository.BankerLoginRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.login.domain.BankerLoginRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.login.entity.BankerLoginEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.login.repository.BankerLoginRepository;
 import com.tlotlanang.virtualstockexchangebackend.globalExceptionHandler.exception.EmailPassException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

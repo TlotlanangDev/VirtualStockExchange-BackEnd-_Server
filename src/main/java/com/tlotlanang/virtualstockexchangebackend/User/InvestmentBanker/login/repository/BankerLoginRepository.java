@@ -1,7 +1,7 @@
-package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.repository;
+package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.login.repository;
 
 
-import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.entity.BankerLoginEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.login.entity.BankerLoginEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
