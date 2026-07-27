@@ -5,7 +5,9 @@ import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.rep
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class CompanyViewsBankersServiceImpl implements CompanyViewsBankersService{
@@ -17,5 +19,11 @@ public class CompanyViewsBankersServiceImpl implements CompanyViewsBankersServic
     public Slice<CompanyViewsBankersEntity> getBankersList(Pageable pageable) {
 
         return companyViewsBankersRepository.findAll(pageable);
+    }
+
+    @Override
+    public CompanyViewsBankersEntity viewByEmail(String emailAddress) {
+        return companyViewsBankersRepository.findById(emailAddress).orElseThrow(() -> new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "Banker not found with Email Address: " + emailAddress));
     }
 }
