@@ -33,14 +33,14 @@ public class TemporaryBoardController implements Board<TemporaryBoardResponseDto
     private SlicedResourcesAssembler<TemporaryBoardEntity> slicedAssembler;
 
     @Override
-    public ResponseEntity<SlicedModel<EntityModel<TemporaryBoardResponseDto>>> temporarylisting(Pageable pageable) {
-        var entitySlice = temporaryBoardService.getListings(pageable);
+    public ResponseEntity<SlicedModel<EntityModel<TemporaryBoardResponseDto>>> listing(Pageable pageable) {
+        var temporaryEntitySlice = temporaryBoardService.getListings(pageable);
 
-        SlicedModel<EntityModel<TemporaryBoardResponseDto>> slicedModel = slicedAssembler.toModel(
-                entitySlice,
+        SlicedModel<EntityModel<TemporaryBoardResponseDto>> temporaryBoardSlicedModel = slicedAssembler.toModel(
+                temporaryEntitySlice,
                 entity -> EntityModel.of(temporaryBoardMapper.toDto(entity))
         );
 
-        return ResponseEntity.ok(slicedModel);
+        return ResponseEntity.ok(temporaryBoardSlicedModel);
     }
 }

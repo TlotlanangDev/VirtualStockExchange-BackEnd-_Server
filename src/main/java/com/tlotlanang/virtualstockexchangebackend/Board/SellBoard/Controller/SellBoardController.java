@@ -18,7 +18,7 @@ public class SellBoardController implements Board<SellBoardResponseDto> {
 
 
     @Override
-    public ResponseEntity<SlicedModel<EntityModel<SellBoardResponseDto>>> temporarylisting(Pageable pageable) {
+    public ResponseEntity<SlicedModel<EntityModel<SellBoardResponseDto>>> listing(Pageable pageable) {
         return null;
     }
 }

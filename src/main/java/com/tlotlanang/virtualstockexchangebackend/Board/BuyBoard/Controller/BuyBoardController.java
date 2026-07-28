@@ -19,7 +19,7 @@ public class BuyBoardController implements Board<BuyBoardResponseDto> {
 
 
     @Override
-    public ResponseEntity<SlicedModel<EntityModel<BuyBoardResponseDto>>> temporarylisting(Pageable pageable) {
+    public ResponseEntity<SlicedModel<EntityModel<BuyBoardResponseDto>>> listing(Pageable pageable) {
         return null;
     }
 }

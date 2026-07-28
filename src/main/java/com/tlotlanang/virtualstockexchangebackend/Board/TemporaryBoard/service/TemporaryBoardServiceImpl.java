@@ -18,7 +18,6 @@ public class TemporaryBoardServiceImpl implements TemporaryBoardService{
     public Slice<TemporaryBoardEntity> getListings( Pageable pageable) {
 
 
-
         return temporaryBoardRepository.findBy(pageable);
     }
 }
