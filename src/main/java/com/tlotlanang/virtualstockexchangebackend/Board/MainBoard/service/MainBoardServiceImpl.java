@@ -5,7 +5,9 @@ import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.repository.Mai
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class MainBoardServiceImpl implements MainBoardService{
@@ -17,5 +19,13 @@ public class MainBoardServiceImpl implements MainBoardService{
     @Override
     public Slice<MainBoardEntity> getListings(Pageable pageable) {
         return mainBoardRepository.findBy(pageable);
+    }
+
+    @Override
+    public MainBoardEntity viewByEmail(String emailAddress) {
+
+
+        return mainBoardRepository.findById(emailAddress).orElseThrow(() -> new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "Company not found with Email Address: " + emailAddress));
     }
 }

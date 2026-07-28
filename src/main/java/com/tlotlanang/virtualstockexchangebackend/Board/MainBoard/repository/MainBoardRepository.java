@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MainBoardRepository extends JpaRepository<MainBoardEntity,Integer> {
+public interface MainBoardRepository extends JpaRepository<MainBoardEntity,String> {
 
     Slice<MainBoardEntity> findBy(Pageable pageable);
 }
