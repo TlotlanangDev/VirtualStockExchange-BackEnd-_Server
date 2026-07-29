@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 public interface Board <BoardResponseDto>{
 
-    @GetMapping
+    @GetMapping("/listings")
     ResponseEntity<SlicedModel<EntityModel<BoardResponseDto>>> listing(@Valid Pageable pageable );
 
-    @GetMapping("/{emailAddress}")
-    ResponseEntity<EntityModel<BoardResponseDto>>getByEmail(@PathVariable("emailAddress") String emailAddress);
+    @GetMapping("/listings/{id}")
+    ResponseEntity<EntityModel<BoardResponseDto>> getCompanyInfo(@PathVariable("id") Integer id);
 }

@@ -22,4 +22,9 @@ public class BuyBoardController implements Board<BuyBoardResponseDto> {
     public ResponseEntity<SlicedModel<EntityModel<BuyBoardResponseDto>>> listing(Pageable pageable) {
         return null;
     }
+
+    @Override
+    public ResponseEntity<EntityModel<BuyBoardResponseDto>> getCompanyInfo(Integer id) {
+        return null;
+    }
 }

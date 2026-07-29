@@ -21,4 +21,10 @@ public class SellBoardController implements Board<SellBoardResponseDto> {
     public ResponseEntity<SlicedModel<EntityModel<SellBoardResponseDto>>> listing(Pageable pageable) {
         return null;
     }
+
+    @Override
+    public ResponseEntity<EntityModel<SellBoardResponseDto>> getCompanyInfo(Integer id) {
+        return null;
+    }
+
 }
