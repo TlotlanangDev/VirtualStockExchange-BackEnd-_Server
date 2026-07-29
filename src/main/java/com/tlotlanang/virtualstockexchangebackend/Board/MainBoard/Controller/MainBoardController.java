@@ -20,7 +20,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 
 @RestController
-@RequestMapping("api/v1/stockExchange/mainboard/listings")
+@RequestMapping("api/v1/stockExchange/mainboard")
 public class MainBoardController implements Board<MainBoardResponseDto> {
 
     @Autowired
@@ -32,7 +32,7 @@ public class MainBoardController implements Board<MainBoardResponseDto> {
     @Autowired
     private SlicedResourcesAssembler<MainBoardEntity> slicedAssembler;
 
-    @GetMapping
+    @GetMapping("/listings")
     @Override
     public ResponseEntity<SlicedModel<EntityModel<MainBoardResponseDto>>> listing(Pageable pageable) {
 
@@ -47,15 +47,16 @@ public class MainBoardController implements Board<MainBoardResponseDto> {
 
     @GetMapping
     @Override
-    public ResponseEntity<EntityModel<MainBoardResponseDto>> getByEmail(String emailAddress) {
+    public ResponseEntity<EntityModel<MainBoardResponseDto>> getCompanyInfo(Integer id) {
 
-        var entity = mainBoardService.viewByEmail(emailAddress);
+        var entity = mainBoardService.viewByEmail(id);
 
         MainBoardResponseDto mainBoardResponseDto = mainBoardMapper.toDto(entity);
 
-        var mainListedCompanyselfLink = linkTo(methodOn(MainBoardController.class).getByEmail(emailAddress)).withSelfRel();
+        var mainListedCompanyselfLink = linkTo(methodOn(MainBoardController.class).getCompanyInfo(id)).withSelfRel();
 
-        EntityModel<MainBoardResponseDto>mainResponseEntityModel = EntityModel.of(mainBoardResponseDto, mainListedCompanyselfLink);
+        EntityModel<MainBoardResponseDto>mainResponseEntityModel = EntityModel
+                .of(mainBoardResponseDto, mainListedCompanyselfLink);
         return ResponseEntity.ok(mainResponseEntityModel);
     }
 }

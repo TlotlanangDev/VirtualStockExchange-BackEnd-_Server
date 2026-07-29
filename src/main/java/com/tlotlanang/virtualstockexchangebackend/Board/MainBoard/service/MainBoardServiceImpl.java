@@ -22,10 +22,10 @@ public class MainBoardServiceImpl implements MainBoardService{
     }
 
     @Override
-    public MainBoardEntity viewByEmail(String emailAddress) {
+    public MainBoardEntity viewByEmail(Integer id) {
 
 
-        return mainBoardRepository.findById(emailAddress).orElseThrow(() -> new ResponseStatusException(
-                HttpStatus.NOT_FOUND, "Company not found with Email Address: " + emailAddress));
+        return mainBoardRepository.findById(id).orElseThrow(() -> new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "Company not found with Email Address: " + id));
     }
 }
