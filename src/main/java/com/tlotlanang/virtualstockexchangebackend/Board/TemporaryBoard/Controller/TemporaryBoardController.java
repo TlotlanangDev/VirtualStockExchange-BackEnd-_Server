@@ -14,6 +14,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+
 
 /*
 The Temporary board is only visible to Investment bankers, these are submitted listings form companies that must be
@@ -32,15 +35,43 @@ public class TemporaryBoardController implements Board<TemporaryBoardResponseDto
     @Autowired
     private SlicedResourcesAssembler<TemporaryBoardEntity> slicedAssembler;
 
+    //@GetMapping
     @Override
     public ResponseEntity<SlicedModel<EntityModel<TemporaryBoardResponseDto>>> listing(Pageable pageable) {
         var temporaryEntitySlice = temporaryBoardService.getListings(pageable);
 
         SlicedModel<EntityModel<TemporaryBoardResponseDto>> temporaryBoardSlicedModel = slicedAssembler.toModel(
                 temporaryEntitySlice,
-                entity -> EntityModel.of(temporaryBoardMapper.toDto(entity))
-        );
+                entity -> {
+                    TemporaryBoardResponseDto temporaryBoardResponseDto = temporaryBoardMapper.toDto(entity);
 
+                    var temporaryBoardSelfLink = linkTo(methodOn(TemporaryBoardController.class)
+                            .getCompanyInfo(temporaryBoardResponseDto.Id())).withSelfRel();
+
+                    return EntityModel.of(temporaryBoardResponseDto,temporaryBoardSelfLink);
+                });
+
+                    var temporaryBoardListToCollection = linkTo(methodOn(TemporaryBoardController.class)
+                            .listing(pageable)).withSelfRel();
+        temporaryBoardSlicedModel.add(temporaryBoardListToCollection);
         return ResponseEntity.ok(temporaryBoardSlicedModel);
+
+
+    }
+
+    //@GetMapping
+    @Override
+    public ResponseEntity<EntityModel<TemporaryBoardResponseDto>> getCompanyInfo(Integer id) {
+
+        var entity = temporaryBoardService.viewByCompanyName(id);
+
+        TemporaryBoardResponseDto temporaryBoardResponseDto = temporaryBoardMapper.toDto(entity);
+
+        var temporaryListedSelflink = linkTo(methodOn(TemporaryBoardController.class)
+                .getCompanyInfo(id)).withSelfRel();
+
+        EntityModel<TemporaryBoardResponseDto>temporaryBoardResponseDtoEntityModel = EntityModel
+                .of(temporaryBoardResponseDto, temporaryListedSelflink);
+        return ResponseEntity.ok(temporaryBoardResponseDtoEntityModel);
     }
 }

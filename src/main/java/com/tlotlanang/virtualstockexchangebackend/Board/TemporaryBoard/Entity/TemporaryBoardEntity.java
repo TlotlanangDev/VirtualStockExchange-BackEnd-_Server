@@ -19,6 +19,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class TemporaryBoardEntity {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
