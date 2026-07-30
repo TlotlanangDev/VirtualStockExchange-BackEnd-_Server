@@ -1,10 +1,10 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.mapper;
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.mapper;
 
 
-import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.Entity.MainBoardEntity;
-import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.domain.MainBoardDto;
-import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.domain.MainBoardRequest;
-import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.domain.MainBoardResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.Entity.MainBoardEntity;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.domain.MainBoardDto;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.domain.MainBoardRequest;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.domain.MainBoardResponseDto;
 import org.springframework.stereotype.Component;
 
 @Component

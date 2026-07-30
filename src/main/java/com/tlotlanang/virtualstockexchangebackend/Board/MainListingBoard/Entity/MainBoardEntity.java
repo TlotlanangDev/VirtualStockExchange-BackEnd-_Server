@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.Entity;
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

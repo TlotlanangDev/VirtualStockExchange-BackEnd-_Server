@@ -1,10 +1,10 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.Controller;
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.Controller;
 
 import com.tlotlanang.virtualstockexchangebackend.Board.Board;
-import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.Entity.MainBoardEntity;
-import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.domain.MainBoardResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.mapper.MainBoardMapper;
-import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.service.MainBoardService;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.Entity.MainBoardEntity;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.domain.MainBoardResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.mapper.MainBoardMapper;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.service.MainBoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.SlicedResourcesAssembler;

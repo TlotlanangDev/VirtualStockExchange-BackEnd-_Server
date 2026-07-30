@@ -1,17 +1,11 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.SellBoard.Controller;
+package com.tlotlanang.virtualstockexchangebackend.Board.SellSharesBoard.Controller;
 
 import com.tlotlanang.virtualstockexchangebackend.Board.Board;
-import com.tlotlanang.virtualstockexchangebackend.Board.SellBoard.domain.SellBoardRequestDto;
-import com.tlotlanang.virtualstockexchangebackend.Board.SellBoard.domain.SellBoardResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.Board.SellSharesBoard.domain.SellBoardResponseDto;
 import org.springframework.data.domain.Pageable;
-import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.SlicedModel;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Collection;
-import java.util.List;
 
 //@RestController
 public class SellBoardController implements Board<SellBoardResponseDto> {

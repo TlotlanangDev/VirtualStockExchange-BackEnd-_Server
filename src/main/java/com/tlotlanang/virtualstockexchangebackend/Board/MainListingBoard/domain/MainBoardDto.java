@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.domain;
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.domain;
 
 import jakarta.validation.constraints.*;
 import lombok.Builder;

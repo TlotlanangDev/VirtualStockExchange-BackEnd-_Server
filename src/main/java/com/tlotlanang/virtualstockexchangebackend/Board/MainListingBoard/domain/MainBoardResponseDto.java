@@ -1,12 +1,12 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.domain;
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.domain;
+
 
 import lombok.Builder;
-import org.springframework.boot.autoconfigure.info.ProjectInfoProperties;
 
 import java.math.BigDecimal;
 
 @Builder
-public record MainBoardRequest(
+public record MainBoardResponseDto(
 
         Integer Id,
         String companyName,

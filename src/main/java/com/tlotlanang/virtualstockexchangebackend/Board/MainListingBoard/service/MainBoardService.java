@@ -1,6 +1,6 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.service;
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.service;
 
-import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.Entity.MainBoardEntity;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.Entity.MainBoardEntity;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 

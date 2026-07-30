@@ -1,6 +1,6 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.repository;
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.repository;
 
-import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.Entity.MainBoardEntity;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.Entity.MainBoardEntity;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.jpa.repository.JpaRepository;

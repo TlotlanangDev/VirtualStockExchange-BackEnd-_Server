@@ -1,12 +1,11 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.domain;
-
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.domain;
 
 import lombok.Builder;
 
 import java.math.BigDecimal;
 
 @Builder
-public record MainBoardResponseDto(
+public record MainBoardRequest(
 
         Integer Id,
         String companyName,

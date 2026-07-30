@@ -1,7 +1,7 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.service;
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.service;
 
-import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.Entity.MainBoardEntity;
-import com.tlotlanang.virtualstockexchangebackend.Board.MainBoard.repository.MainBoardRepository;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.Entity.MainBoardEntity;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.repository.MainBoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
