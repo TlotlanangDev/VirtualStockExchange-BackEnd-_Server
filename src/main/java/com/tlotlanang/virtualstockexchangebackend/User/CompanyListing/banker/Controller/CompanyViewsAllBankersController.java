@@ -42,7 +42,7 @@ public class CompanyViewsAllBankersController {
                     CompanyViewsBankersResponseDto companyViewsBankersResponseDto = companyViewsBankersMapper.toDto(entity);
 
                     var bankerSelfLink = linkTo(methodOn(CompanyViewsAllBankersController.class)
-                            .getBankerByEmail(companyViewsBankersResponseDto.emailAddress()))
+                            .selectBankerByEmail(companyViewsBankersResponseDto.emailAddress()))
                             .withSelfRel();
                     return EntityModel.of(companyViewsBankersResponseDto, bankerSelfLink);
                 });
@@ -57,14 +57,14 @@ public class CompanyViewsAllBankersController {
 
 
     @GetMapping("/{emailAddress}")
-    public ResponseEntity<EntityModel<CompanyViewsBankersResponseDto>> getBankerByEmail(@PathVariable("emailAddress") String emailAddress)
+    public ResponseEntity<EntityModel<CompanyViewsBankersResponseDto>>selectBankerByEmail(@PathVariable("emailAddress") String emailAddress)
         {
 
             var entity = companyViewsBankersService.viewByEmail(emailAddress);
 
             CompanyViewsBankersResponseDto companyViewsBankersResponseDto = companyViewsBankersMapper.toDto(entity);
 
-            var bankerSelfLink = linkTo(methodOn(CompanyViewsAllBankersController.class).getBankerByEmail(emailAddress)).withSelfRel();
+            var bankerSelfLink = linkTo(methodOn(CompanyViewsAllBankersController.class).selectBankerByEmail(emailAddress)).withSelfRel();
             EntityModel<CompanyViewsBankersResponseDto> BankerResponseEntityModel = EntityModel.of(companyViewsBankersResponseDto, bankerSelfLink);
 
             return ResponseEntity.ok(BankerResponseEntityModel);
