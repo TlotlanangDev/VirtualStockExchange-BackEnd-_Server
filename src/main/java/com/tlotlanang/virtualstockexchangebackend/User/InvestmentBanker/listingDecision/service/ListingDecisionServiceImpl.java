@@ -25,7 +25,7 @@ public class ListingDecisionServiceImpl implements ListingDecisionService{
     @Override
     public ListingDecisionEntity viewById(Integer id) {
         return listingDecisionRepository.findById(id).orElseThrow(() -> new ResponseStatusException(
-                HttpStatus.NOT_FOUND, "Company not found with Email Address: " + id));
+                HttpStatus.NOT_FOUND, "Company not found with Id: " + id));
     }
 
     @Override
@@ -35,6 +35,6 @@ public class ListingDecisionServiceImpl implements ListingDecisionService{
 
     @Override
     public MainBoardEntity approveLisiting(Integer id) {
-        return null;
+        return listingDecisionRepository.save(id);
     }
 }

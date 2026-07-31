@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface ListingDecisionRepository extends JpaRepository<ListingDecisionEntity, Integer> {
 
     Slice<ListingDecisionEntity>findBy(Pageable pageable);
+
 }

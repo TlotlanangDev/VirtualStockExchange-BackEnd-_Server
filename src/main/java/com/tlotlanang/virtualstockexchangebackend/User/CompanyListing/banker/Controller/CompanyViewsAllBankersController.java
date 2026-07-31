@@ -37,7 +37,7 @@ public class CompanyViewsAllBankersController {
 
         var entitySlice = companyViewsBankersService.getBankersList(pageable);
 
-        SlicedModel<EntityModel<CompanyViewsBankersResponseDto>> BankerListslicedModel = slicedAssembler.toModel(
+        SlicedModel<EntityModel<CompanyViewsBankersResponseDto>> BankerLists = slicedAssembler.toModel(
                 entitySlice, entity -> {
                     CompanyViewsBankersResponseDto companyViewsBankersResponseDto = companyViewsBankersMapper.toDto(entity);
 
@@ -49,10 +49,10 @@ public class CompanyViewsAllBankersController {
 
                     var bakerListcollectionSelfLink = linkTo(methodOn(CompanyViewsAllBankersController.class)
                             .getListOfBankers(pageable)).withSelfRel();
-        BankerListslicedModel.add(bakerListcollectionSelfLink);
+                    BankerLists.add(bakerListcollectionSelfLink);
 
 
-        return ResponseEntity.ok(BankerListslicedModel);
+        return ResponseEntity.ok(BankerLists);
     }
 
 
