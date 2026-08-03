@@ -66,4 +66,35 @@ public class ListingDecisionController {
 
         return ResponseEntity.ok(requestResponseEntityModel);
     }
+
+    @GetMapping("/reject/{id}")
+    public ResponseEntity<EntityModel<ListingDecisionResponseDto>>rejectLisiting(@PathVariable("id") Integer id){
+
+        var entity = listingDecisionService.rejectListingRequest(id);
+
+        ListingDecisionResponseDto listingDecisionResponseDto = listingDecisionMapper.toDto(entity);
+
+        var requestRejectSelfLink = linkTo(methodOn(ListingDecisionController.class).rejectLisiting(id)).withSelfRel();
+
+        EntityModel<ListingDecisionResponseDto>deleteRequestEntityModel = EntityModel
+                .of(listingDecisionResponseDto,requestRejectSelfLink);
+
+        return ResponseEntity.ok(deleteRequestEntityModel);
+    }
+
+    @GetMapping("/approve/{id}")
+    public ResponseEntity<EntityModel<ListingDecisionResponseDto>>approveLisiting(@PathVariable("id") Integer id){
+
+        var entity = listingDecisionService.approveLisiting(id);
+
+        ListingDecisionResponseDto listingDecisionResponseDto = listingDecisionMapper.toDto(entity);
+
+        var requestApproveSelfLink = linkTo(methodOn(ListingDecisionController.class).rejectLisiting(id)).withSelfRel();
+
+        EntityModel<ListingDecisionResponseDto>approveRequestEntityModel = EntityModel
+                .of(listingDecisionResponseDto,requestApproveSelfLink);
+
+        return ResponseEntity.ok(approveRequestEntityModel);
+
+    }
 }
