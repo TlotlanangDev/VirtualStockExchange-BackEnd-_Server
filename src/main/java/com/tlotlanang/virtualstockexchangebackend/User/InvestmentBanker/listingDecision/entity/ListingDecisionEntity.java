@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "MainListingAcc")
+@Table(name = "TemporaryListingAcc")
 @Data
 @Builder
 @NoArgsConstructor
