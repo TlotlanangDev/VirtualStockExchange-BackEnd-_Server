@@ -4,7 +4,9 @@ import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.listingD
 import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.listingDecision.domain.ListingDecisionRequest;
 import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.listingDecision.domain.ListingDecisionResponseDto;
 import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.listingDecision.entity.ListingDecisionEntity;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ListingDecisionMapperImpl implements ListingDecisionMapper{
     @Override
     public ListingDecisionRequest fromDto(ListingDecisionDto listingDecisionDto) {
