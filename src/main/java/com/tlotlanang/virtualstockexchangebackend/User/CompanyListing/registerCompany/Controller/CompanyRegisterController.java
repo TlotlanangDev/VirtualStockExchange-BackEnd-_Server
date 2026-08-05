@@ -1,11 +1,11 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.Controller;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.Controller;
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.domain.CompanyRegisterDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.domain.CompanyRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.domain.CompanyRegisterResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.entity.CompanyRegisterEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.mapper.CompanyRegisterMapper;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.service.CompanyRegisterService;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.domain.CompanyRegisterDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.domain.CompanyRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.domain.CompanyRegisterResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.entity.CompanyRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.mapper.CompanyRegisterMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.service.CompanyRegisterService;
 
 import com.tlotlanang.virtualstockexchangebackend.User.RegisterUser;
 import jakarta.validation.Valid;

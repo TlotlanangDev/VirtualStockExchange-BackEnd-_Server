@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.entity;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

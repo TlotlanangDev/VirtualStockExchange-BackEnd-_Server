@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.register.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
