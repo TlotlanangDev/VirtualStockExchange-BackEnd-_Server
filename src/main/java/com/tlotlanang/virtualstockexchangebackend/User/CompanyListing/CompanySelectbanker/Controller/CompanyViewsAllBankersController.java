@@ -1,14 +1,13 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.Controller;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.Controller;
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.domain.CompanyViewsBankersResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.entity.CompanyViewsBankersEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.mapper.CompanyViewsBankersMapper;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.service.CompanyViewsBankersService;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.domain.CompanyViewsBankersResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.entity.CompanyViewsBankersEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.mapper.CompanyViewsBankersMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.service.CompanyViewsBankersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.SlicedResourcesAssembler;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.Link;
 import org.springframework.hateoas.SlicedModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

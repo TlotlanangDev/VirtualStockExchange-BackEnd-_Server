@@ -1,7 +1,7 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.service;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.service;
 
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.entity.CompanyViewsBankersEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.entity.CompanyViewsBankersEntity;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 

@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.domain;
 
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;

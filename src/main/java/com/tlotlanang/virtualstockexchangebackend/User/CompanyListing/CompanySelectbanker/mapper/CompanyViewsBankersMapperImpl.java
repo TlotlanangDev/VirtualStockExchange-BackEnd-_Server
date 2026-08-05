@@ -1,9 +1,9 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.mapper;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.mapper;
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.domain.CompanyViewsBankerDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.domain.CompanyViewsBankersRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.domain.CompanyViewsBankersResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.banker.entity.CompanyViewsBankersEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.domain.CompanyViewsBankerDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.domain.CompanyViewsBankersRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.domain.CompanyViewsBankersResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.entity.CompanyViewsBankersEntity;
 import org.springframework.stereotype.Component;
 
 @Component
