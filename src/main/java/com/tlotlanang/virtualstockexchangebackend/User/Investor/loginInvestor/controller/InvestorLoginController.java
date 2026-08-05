@@ -1,17 +1,16 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Investor.controller;
+package com.tlotlanang.virtualstockexchangebackend.User.Investor.loginInvestor.controller;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorLoginDto;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorLoginRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorLoginResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.entity.InvestorLoginEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.mapper.InvestorLoginMapper;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.service.InvestorLoginService;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.loginInvestor.domain.InvestorLoginDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.loginInvestor.domain.InvestorLoginRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.loginInvestor.domain.InvestorLoginResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.loginInvestor.entity.InvestorLoginEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.loginInvestor.mapper.InvestorLoginMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.loginInvestor.service.InvestorLoginService;
 import com.tlotlanang.virtualstockexchangebackend.User.LoginUser;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,8 +1,8 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Investor.service;
+package com.tlotlanang.virtualstockexchangebackend.User.Investor.loginInvestor.service;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorLoginRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.entity.InvestorLoginEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.repository.InvestorLoginRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.loginInvestor.domain.InvestorLoginRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.loginInvestor.entity.InvestorLoginEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.loginInvestor.repository.InvestorLoginRepository;
 import com.tlotlanang.virtualstockexchangebackend.globalExceptionHandler.exception.EmailPassException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

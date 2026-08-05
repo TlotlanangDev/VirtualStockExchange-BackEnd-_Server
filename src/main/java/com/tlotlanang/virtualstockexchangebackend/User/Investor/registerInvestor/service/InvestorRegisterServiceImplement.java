@@ -1,8 +1,8 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Investor.service;
+package com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.service;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.entity.InvestorRegisterEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.repository.InvestorRegisterRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.domain.InvestorRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.entity.InvestorRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.repository.InvestorRegisterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

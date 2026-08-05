@@ -1,11 +1,12 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Investor.controller;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorRegisterDto;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.domain.InvestorRegisterResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.entity.InvestorRegisterEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.mapper.InvestorRegisterMapper;
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.service.InvestorRegisterServiceImplement;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.domain.InvestorRegisterDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.domain.InvestorRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.domain.InvestorRegisterResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.entity.InvestorRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.mapper.InvestorRegisterMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.controller.InvestorRegisterController;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.service.InvestorRegisterServiceImplement;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;

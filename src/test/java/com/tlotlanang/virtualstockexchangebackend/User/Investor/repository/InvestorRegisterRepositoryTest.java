@@ -1,6 +1,7 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Investor.repository;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.entity.InvestorRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.entity.InvestorRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.repository.InvestorRegisterRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
