@@ -1,8 +1,8 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.listing.service;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.ListCompany.service;
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.listing.domain.CompanyListingRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.listing.entity.CompanyListingEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.listing.repository.CompanyListingRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.ListCompany.domain.CompanyListingRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.ListCompany.entity.CompanyListingEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.ListCompany.repository.CompanyListingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

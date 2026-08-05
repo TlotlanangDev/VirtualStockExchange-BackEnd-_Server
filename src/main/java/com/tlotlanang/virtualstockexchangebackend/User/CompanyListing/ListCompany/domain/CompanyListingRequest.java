@@ -1,7 +1,6 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.listing.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.ListCompany.domain;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 public record CompanyListingRequest(
         Integer id,

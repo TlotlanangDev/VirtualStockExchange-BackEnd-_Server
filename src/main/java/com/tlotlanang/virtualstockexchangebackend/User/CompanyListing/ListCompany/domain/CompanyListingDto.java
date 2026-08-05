@@ -1,10 +1,9 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.listing.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.ListCompany.domain;
 
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Builder
 public record CompanyListingDto(
