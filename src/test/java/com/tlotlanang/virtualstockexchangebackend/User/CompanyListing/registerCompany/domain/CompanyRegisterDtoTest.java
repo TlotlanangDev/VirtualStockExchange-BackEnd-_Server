@@ -1,6 +1,7 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.entity;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.domain;
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.entity.CompanyRegisterEntity;
+
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.domain.CompanyRegisterDto;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -13,9 +14,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
-
-class CompanyRegisterEntityTest {
-
+class CompanyRegisterDtoTest {
     private Validator validation;
     @BeforeEach
     void setUp() {
@@ -24,9 +23,9 @@ class CompanyRegisterEntityTest {
     }
 
     @Test
-    public void setCompanyEntity_passValidInfo_returnDataPassed(){
-        CompanyRegisterEntity companyRegisterEntity = CompanyRegisterEntity.builder()
-                .id(null)
+    public void setCompanyDto_passValidInfo_returnDataPassed(){
+        CompanyRegisterDto companyRegisterDto = CompanyRegisterDto.builder()
+
                 .companyName("Tlotlanang")
                 .registrationNumber("Gabonewe")
                 .registrationDate(LocalDate.of(2002,9,1))
@@ -34,7 +33,7 @@ class CompanyRegisterEntityTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        Set<ConstraintViolation<CompanyRegisterEntity>> violations = validation.validate(companyRegisterEntity);
+        Set<ConstraintViolation<CompanyRegisterDto>> violations = validation.validate(companyRegisterDto);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
@@ -43,11 +42,13 @@ class CompanyRegisterEntityTest {
         Assertions.assertThat(violations).isEmpty();
         Assertions.assertThat(violations.size()).isEqualTo(0);
 
+
+
     }
 
     @Test
-    public void setCompanyEntity_passInValidInfo_returnData(){
-        CompanyRegisterEntity companyRegisterEntity = CompanyRegisterEntity.builder()
+    public void setCompanyDto_passInValidInfo_returnData(){
+        CompanyRegisterDto companyRegisterDto = CompanyRegisterDto.builder()
 
                 .companyName("d")
                 .registrationNumber("s")
@@ -56,7 +57,7 @@ class CompanyRegisterEntityTest {
                 .emailAddress("Tlotlananggmailcom")
                 .passWord("").build();
 
-        Set<ConstraintViolation<CompanyRegisterEntity>> violations = validation.validate(companyRegisterEntity);
+        Set<ConstraintViolation<CompanyRegisterDto>> violations = validation.validate(companyRegisterDto);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
@@ -72,5 +73,4 @@ class CompanyRegisterEntityTest {
 
 
     }
-
 }

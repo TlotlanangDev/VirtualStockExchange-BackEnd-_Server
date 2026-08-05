@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.service;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.service;
 
 
 import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.domain.CompanyRegisterRequest;

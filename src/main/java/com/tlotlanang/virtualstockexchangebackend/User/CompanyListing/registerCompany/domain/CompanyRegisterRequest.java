@@ -6,7 +6,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Builder
-
 public record CompanyRegisterRequest(
         Integer id,
         String companyName,

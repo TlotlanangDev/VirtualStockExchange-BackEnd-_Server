@@ -1,7 +1,6 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.entity;
 
-
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.domain.CompanyRegisterDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.entity.CompanyRegisterEntity;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -10,11 +9,14 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
-class CompanyRegisterDtoTest {
+
+class CompanyRegisterEntityTest {
+
     private Validator validation;
     @BeforeEach
     void setUp() {
@@ -23,17 +25,19 @@ class CompanyRegisterDtoTest {
     }
 
     @Test
-    public void setCompanyDto_passValidInfo_returnDataPassed(){
-        CompanyRegisterDto companyRegisterDto = CompanyRegisterDto.builder()
-
+    public void setCompanyEntity_passValidInfo_returnDataPassed(){
+        CompanyRegisterEntity companyRegisterEntity = CompanyRegisterEntity.builder()
+                .id(null)
                 .companyName("Tlotlanang")
-                .registrationNumber("Gabonewe")
+                .registrationNumber("2012/968795/07")
                 .registrationDate(LocalDate.of(2002,9,1))
                 .telePhone("0787058697")
                 .emailAddress("Tlotlanang@gmail.com")
-                .passWord("ergdg43gr").build();
+                .passWord("ergdg43gr")
+                .stockShare(400)
+                .pricePerShare(BigDecimal.valueOf(250)).build();
 
-        Set<ConstraintViolation<CompanyRegisterDto>> violations = validation.validate(companyRegisterDto);
+        Set<ConstraintViolation<CompanyRegisterEntity>> violations = validation.validate(companyRegisterEntity);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
@@ -42,35 +46,39 @@ class CompanyRegisterDtoTest {
         Assertions.assertThat(violations).isEmpty();
         Assertions.assertThat(violations.size()).isEqualTo(0);
 
-
-
     }
 
     @Test
-    public void setCompanyDto_passInValidInfo_returnData(){
-        CompanyRegisterDto companyRegisterDto = CompanyRegisterDto.builder()
+    public void setCompanyEntity_passInValidInfo_returnData(){
+        CompanyRegisterEntity companyRegisterEntity = CompanyRegisterEntity.builder()
 
                 .companyName("d")
                 .registrationNumber("s")
                 .registrationDate(LocalDate.of(2032,9,1))
                 .telePhone("fd0787058697")
                 .emailAddress("Tlotlananggmailcom")
-                .passWord("").build();
+                .passWord("")
+                .stockShare(-33)
+                .pricePerShare(BigDecimal.valueOf(-675)).build();
 
-        Set<ConstraintViolation<CompanyRegisterDto>> violations = validation.validate(companyRegisterDto);
+        Set<ConstraintViolation<CompanyRegisterEntity>> violations = validation.validate(companyRegisterEntity);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
                 .toList();
 
         Assertions.assertThat(violations).isNotEmpty();
-        Assertions.assertThat(failedProperties).contains("name",
+        Assertions.assertThat(failedProperties).contains(
+                "companyName",
                 "registrationNumber",
                 "registrationDate",
                 "telePhone",
                 "emailAddress",
-                "passWord");
+                "passWord",
+                "stockShare",
+                "pricePerShare");
 
 
     }
+
 }
