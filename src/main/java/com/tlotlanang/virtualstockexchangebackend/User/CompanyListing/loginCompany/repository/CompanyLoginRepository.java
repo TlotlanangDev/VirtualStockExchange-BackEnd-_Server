@@ -1,6 +1,6 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.repository;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.loginCompany.repository;
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.entity.CompanyLoginEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.loginCompany.entity.CompanyLoginEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

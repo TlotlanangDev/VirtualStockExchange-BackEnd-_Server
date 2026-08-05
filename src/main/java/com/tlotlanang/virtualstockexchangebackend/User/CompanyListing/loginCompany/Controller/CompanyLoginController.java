@@ -1,11 +1,11 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.Controller;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.loginCompany.Controller;
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.domain.CompanyLoginDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.domain.CompanyLoginRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.domain.CompanyLoginResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.entity.CompanyLoginEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.mapper.CompanyLoginMapper;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.service.CompanyLoginService;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.loginCompany.domain.CompanyLoginDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.loginCompany.domain.CompanyLoginRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.loginCompany.domain.CompanyLoginResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.loginCompany.entity.CompanyLoginEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.loginCompany.mapper.CompanyLoginMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.loginCompany.service.CompanyLoginService;
 import com.tlotlanang.virtualstockexchangebackend.User.LoginUser;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

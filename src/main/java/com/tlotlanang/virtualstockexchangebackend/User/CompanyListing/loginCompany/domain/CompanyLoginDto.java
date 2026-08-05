@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.login.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.loginCompany.domain;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
