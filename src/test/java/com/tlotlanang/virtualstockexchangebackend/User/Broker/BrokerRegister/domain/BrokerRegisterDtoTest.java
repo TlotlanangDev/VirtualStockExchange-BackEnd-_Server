@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Broker.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.domain;
 
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.domain.BrokerRegisterDto;
 import jakarta.validation.ConstraintViolation;

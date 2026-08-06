@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Broker.entity;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.entity;
 
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.entity.BrokerRegisterEntity;
 import jakarta.validation.ConstraintViolation;

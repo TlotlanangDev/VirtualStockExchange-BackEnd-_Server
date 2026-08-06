@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Broker.repository;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.repository;
 
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.entity.BrokerRegisterEntity;
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.repository.BrokerRegisterRepository;

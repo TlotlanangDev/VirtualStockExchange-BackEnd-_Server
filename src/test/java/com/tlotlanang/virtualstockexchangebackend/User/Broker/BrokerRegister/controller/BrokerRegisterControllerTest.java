@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Broker.controller;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.controller;
 
 
 import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.Controller.BrokerRegisterController;

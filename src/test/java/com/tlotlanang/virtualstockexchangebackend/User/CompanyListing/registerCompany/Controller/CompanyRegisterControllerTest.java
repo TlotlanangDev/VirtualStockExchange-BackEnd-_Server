@@ -95,7 +95,11 @@ class CompanyRegisterControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.telePhone",
                         org.hamcrest.CoreMatchers.is(expectedResponse.telePhone())))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.emailAddress",
-                        org.hamcrest.CoreMatchers.is(expectedResponse.emailAddress())));
+                        org.hamcrest.CoreMatchers.is(expectedResponse.emailAddress())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.stockShare",
+                        org.hamcrest.CoreMatchers.is(expectedResponse.stockShare())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.pricePerShare",
+                        org.hamcrest.CoreMatchers.is(expectedResponse.pricePerShare())));
 
     }
 
