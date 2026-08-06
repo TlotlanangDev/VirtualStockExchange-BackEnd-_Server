@@ -1,11 +1,11 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Broker.controller;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.Controller;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterDto;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerRegisterEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.mapper.BrokerRegisterMapper;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.service.BrokerRegisterService;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.domain.BrokerRegisterDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.domain.BrokerRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.domain.BrokerRegisterResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.entity.BrokerRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.mapper.BrokerRegisterMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.service.BrokerRegisterService;
 import com.tlotlanang.virtualstockexchangebackend.User.RegisterUser;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

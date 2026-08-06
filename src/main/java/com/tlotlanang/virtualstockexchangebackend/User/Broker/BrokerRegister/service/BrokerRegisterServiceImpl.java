@@ -1,8 +1,8 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Broker.service;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.service;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerRegisterEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.repository.BrokerRegisterRepository;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.domain.BrokerRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.entity.BrokerRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.repository.BrokerRegisterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

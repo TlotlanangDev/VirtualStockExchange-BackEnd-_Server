@@ -1,15 +1,16 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Broker.controller;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerLogin.Controller;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.*;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerLoginEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.mapper.BrokerLoginMapper;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.service.BrokerLoginService;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerLogin.domain.BrokerLoginDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerLogin.domain.BrokerLoginRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerLogin.domain.BrokerLoginResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerLogin.entity.BrokerLoginEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerLogin.mapper.BrokerLoginMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerLogin.service.BrokerLoginService;
 import com.tlotlanang.virtualstockexchangebackend.User.LoginUser;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

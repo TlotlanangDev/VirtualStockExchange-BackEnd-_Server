@@ -1,9 +1,9 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Broker.mapper;
+package com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.mapper;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterDto;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterRequest;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerRegisterResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.domain.BrokerRegisterDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.domain.BrokerRegisterRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.domain.BrokerRegisterResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.entity.BrokerRegisterEntity;
 import org.springframework.stereotype.Component;
 
 @Component

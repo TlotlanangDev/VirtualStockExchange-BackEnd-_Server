@@ -1,6 +1,7 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Broker.repository;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.entity.BrokerRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.entity.BrokerRegisterEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.repository.BrokerRegisterRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
