@@ -4,7 +4,6 @@ package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerC
 import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.domain.CompanyRegisterRequest;
 import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.entity.CompanyRegisterEntity;
 import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.repository.CompanyRegisterRepository;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.service.CompanyRegisterServiceImplement;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -35,16 +34,22 @@ class CompanyRegisterServiceImplementTest {
                 .registrationDate(LocalDate.of(2002,9,1))
                 .telePhone("0787060708")
                 .emailAddress("Tlotlanang@gmail.com")
-                .passWord("ergdg43gr").build();
+                .passWord("ergdg43gr")
+                .stockShare(null)
+                .pricePerShare(null)
+                .build();
 
         CompanyRegisterRequest companyRegisterRequest = CompanyRegisterRequest.builder()
-                //.Id(null)
+
                 .companyName("Tlotlanang")
                 .registrationNumber("Gabonewe")
                 .registrationDate(LocalDate.of(2002,9,1))
                 .telePhone("0787060708")
                 .emailAddress("Tlotlanang@gmail.com")
-                .passWord("ergdg43gr").build();
+                .passWord("ergdg43gr")
+                .stockShare(null)
+                .pricePerShare(null)
+                .build();
 
 
         Mockito.when(companyRegisterRepository.save(Mockito.any(CompanyRegisterEntity.class)))
@@ -60,6 +65,8 @@ class CompanyRegisterServiceImplementTest {
         Assertions.assertThat(savedRepository.getTelePhone()).isEqualTo("0787060708").isNotNull();
         Assertions.assertThat(savedRepository.getEmailAddress()).isEqualTo("Tlotlanang@gmail.com").isNotNull();
         Assertions.assertThat(savedRepository.getPassWord()).isEqualTo("ergdg43gr").isNotNull();
+        Assertions.assertThat(savedRepository.getStockShare()).isEqualTo(null).isNull();
+        Assertions.assertThat(savedRepository.getPricePerShare()).isEqualTo(null).isNull();
 
     }
 

@@ -1,7 +1,5 @@
 package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.domain;
 
-
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.domain.CompanyRegisterDto;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -10,6 +8,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
@@ -31,7 +30,9 @@ class CompanyRegisterDtoTest {
                 .registrationDate(LocalDate.of(2002,9,1))
                 .telePhone("0787058697")
                 .emailAddress("Tlotlanang@gmail.com")
-                .passWord("ergdg43gr").build();
+                .passWord("ergdg43gr")
+                .stockShare(null)
+                .pricePerShare(null).build();
 
         Set<ConstraintViolation<CompanyRegisterDto>> violations = validation.validate(companyRegisterDto);
 
@@ -55,7 +56,9 @@ class CompanyRegisterDtoTest {
                 .registrationDate(LocalDate.of(2032,9,1))
                 .telePhone("fd0787058697")
                 .emailAddress("Tlotlananggmailcom")
-                .passWord("").build();
+                .passWord("")
+                .stockShare(200)
+                .pricePerShare(BigDecimal.valueOf(240)).build();
 
         Set<ConstraintViolation<CompanyRegisterDto>> violations = validation.validate(companyRegisterDto);
 
@@ -64,12 +67,15 @@ class CompanyRegisterDtoTest {
                 .toList();
 
         Assertions.assertThat(violations).isNotEmpty();
-        Assertions.assertThat(failedProperties).contains("name",
+        Assertions.assertThat(failedProperties).contains(
+                "name",
                 "registrationNumber",
                 "registrationDate",
                 "telePhone",
                 "emailAddress",
-                "passWord");
+                "passWord",
+                "stockShare",
+                "pricePerShare");
 
 
     }

@@ -2,7 +2,6 @@ package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerC
 
 
 import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.entity.CompanyRegisterEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.registerCompany.repository.CompanyRegisterRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +30,8 @@ class CompanyRegisterRepositoryTest {
                 .telePhone("01178574873")
                 .emailAddress("tlotlanang@gmail.com")
                 .passWord("vsvsvs")
-                .pricePerShare(BigDecimal.valueOf(500))
-                .stockShare(20).build();
+                .pricePerShare(null)
+                .stockShare(null).build();
 
 
         CompanyRegisterEntity savedToEntity = companyRegisterRepository.save(companyRegisterEntity);
@@ -45,10 +44,8 @@ class CompanyRegisterRepositoryTest {
         Assertions.assertThat(savedToEntity.getTelePhone()).isEqualTo("01178574873").isNotNull();
         Assertions.assertThat(savedToEntity.getEmailAddress()).isEqualTo("Tlotlanang@gmail.com").isNotNull();
         Assertions.assertThat(savedToEntity.getPassWord()).isEqualTo("vsvsvs").isNotNull();
-        Assertions.assertThat(savedToEntity.getPricePerShare()).isEqualTo(BigDecimal.valueOf(500)).isNotNull();
-        Assertions.assertThat(savedToEntity.getStockShare()).isEqualTo(20).isNotNull();
-
-
+        Assertions.assertThat(savedToEntity.getPricePerShare()).isEqualTo(null).isNull();
+        Assertions.assertThat(savedToEntity.getStockShare()).isEqualTo(null).isNull();
 
     }
 

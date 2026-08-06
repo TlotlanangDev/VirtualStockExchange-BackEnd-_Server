@@ -34,8 +34,8 @@ class CompanyRegisterEntityTest {
                 .telePhone("0787058697")
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr")
-                .stockShare(400)
-                .pricePerShare(BigDecimal.valueOf(250)).build();
+                .stockShare(null)
+                .pricePerShare(null).build();
 
         Set<ConstraintViolation<CompanyRegisterEntity>> violations = validation.validate(companyRegisterEntity);
 
@@ -58,8 +58,8 @@ class CompanyRegisterEntityTest {
                 .telePhone("fd0787058697")
                 .emailAddress("Tlotlananggmailcom")
                 .passWord("")
-                .stockShare(-33)
-                .pricePerShare(BigDecimal.valueOf(-675)).build();
+                .stockShare(33)
+                .pricePerShare(BigDecimal.valueOf(675)).build();
 
         Set<ConstraintViolation<CompanyRegisterEntity>> violations = validation.validate(companyRegisterEntity);
 
