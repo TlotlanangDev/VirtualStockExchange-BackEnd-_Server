@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BrokerLoginRepository extends JpaRepository<BrokerLoginEntity, String> {
+
 }

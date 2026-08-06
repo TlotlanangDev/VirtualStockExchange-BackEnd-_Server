@@ -1,6 +1,4 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.entity;
-
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.entity.BrokerRegisterEntity;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -24,7 +22,7 @@ class BrokerRegisterEntityTest {
     }
 
     @Test
-    public void setBrokerEntity_passValidInfo_returnDataPassed(){
+    public void setBrokerRegisterEntity_passValidInfo_returnDataPassed(){
         BrokerRegisterEntity brokerRegisterEntity = BrokerRegisterEntity.builder()
                 .uuid(null)
                 .name("Tlotlanang")
@@ -36,9 +34,6 @@ class BrokerRegisterEntityTest {
 
         Set<ConstraintViolation<BrokerRegisterEntity>> violations = validation.validate(brokerRegisterEntity);
 
-        List<String> failedProperties = violations.stream()
-                .map(violation -> violation.getPropertyPath().toString())
-                .toList();
 
         Assertions.assertThat(violations).isEmpty();
         Assertions.assertThat(violations.size()).isEqualTo(0);
@@ -46,7 +41,7 @@ class BrokerRegisterEntityTest {
     }
 
     @Test
-    public void setBrokerEntity_passInValidInfo_returnData(){
+    public void setBrokerRegisterEntity_passInValidInfo_returnData(){
         BrokerRegisterEntity brokerRegisterEntity = BrokerRegisterEntity.builder()
 
                 .name("d")

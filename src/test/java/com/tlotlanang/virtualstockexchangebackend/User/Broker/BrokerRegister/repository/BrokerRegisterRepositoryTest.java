@@ -19,7 +19,7 @@ class BrokerRegisterRepositoryTest {
     private BrokerRegisterRepository brokerRegisterRepository;
 
     @Test
-    public void setBrokerRepository_Save_ReturnSavedUser(){
+    public void setBrokerRegisterRepository_Save_ReturnSavedUser(){
 
         BrokerRegisterEntity brokerRegisterEntity = BrokerRegisterEntity.builder()
                 .uuid(null)

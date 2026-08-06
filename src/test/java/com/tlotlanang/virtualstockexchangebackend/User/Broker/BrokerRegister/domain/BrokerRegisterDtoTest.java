@@ -1,6 +1,5 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.domain;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.BrokerRegister.domain.BrokerRegisterDto;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -24,7 +23,7 @@ class BrokerRegisterDtoTest {
     }
 
     @Test
-    public void setBrokerDto_passValidInfo_returnDataPassed(){
+    public void setBrokerRegisterDto_passValidInfo_returnDataPassed(){
         BrokerRegisterDto brokerRegisterDto = BrokerRegisterDto.builder()
 
                 .name("Tlotlanang")
@@ -48,7 +47,7 @@ class BrokerRegisterDtoTest {
     }
 
     @Test
-    public void setBrokerDto_passInValidInfo_returnData(){
+    public void setBrokerRegisterDto_passInValidInfo_returnData(){
         BrokerRegisterDto brokerRegisterDto = BrokerRegisterDto.builder()
 
                 .name("d")
