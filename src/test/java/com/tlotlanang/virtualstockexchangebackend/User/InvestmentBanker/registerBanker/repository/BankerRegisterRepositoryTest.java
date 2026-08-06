@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.repository;
+package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.registerBanker.repository;
 
 import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.registerBanker.entity.BankerRegisterEntity;
 import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.registerBanker.repository.BankerRegisterRepository;
