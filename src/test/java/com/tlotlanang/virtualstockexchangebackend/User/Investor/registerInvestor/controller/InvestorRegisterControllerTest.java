@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Investor.controller;
+package com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.controller;
 
 import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.domain.InvestorRegisterDto;
 import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.domain.InvestorRegisterRequest;

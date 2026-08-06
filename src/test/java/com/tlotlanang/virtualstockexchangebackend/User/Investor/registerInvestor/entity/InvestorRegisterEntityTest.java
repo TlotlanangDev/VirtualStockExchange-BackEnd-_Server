@@ -1,6 +1,7 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Investor.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.entity;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.domain.InvestorRegisterDto;
+
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.entity.InvestorRegisterEntity;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 
 
-class InvestorRegisterDtoTest {
+class InvestorRegisterEntityTest {
 
     private Validator validation;
     @BeforeEach
@@ -24,9 +25,9 @@ class InvestorRegisterDtoTest {
     }
 
     @Test
-    public void setInvestorDto_passValidInfo_returnDataPassed(){
-        InvestorRegisterDto investorRegisterDto = InvestorRegisterDto.builder()
-
+    public void setInvestorEntity_passValidInfo_returnDataPassed(){
+        InvestorRegisterEntity investorRegisterEntity = InvestorRegisterEntity.builder()
+                .uuid(null)
                 .name("Tlotlanang")
                 .surName("Gabonewe")
                 .dateOfBirth(LocalDate.of(2002,9,1))
@@ -34,7 +35,7 @@ class InvestorRegisterDtoTest {
                 .emailAddress("Tlotlanang@gmail.com")
                 .passWord("ergdg43gr").build();
 
-        Set<ConstraintViolation<InvestorRegisterDto>> violations = validation.validate(investorRegisterDto);
+        Set<ConstraintViolation<InvestorRegisterEntity>> violations = validation.validate(investorRegisterEntity);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())
@@ -43,13 +44,11 @@ class InvestorRegisterDtoTest {
         Assertions.assertThat(violations).isEmpty();
         Assertions.assertThat(violations.size()).isEqualTo(0);
 
-
-
     }
 
     @Test
-    public void setInvestorDto_passInValidInfo_returnData(){
-        InvestorRegisterDto investorRegisterDto = InvestorRegisterDto.builder()
+    public void setInvestorEntity_passInValidInfo_returnData(){
+        InvestorRegisterEntity investorRegisterEntity = InvestorRegisterEntity.builder()
 
                 .name("d")
                 .surName("s")
@@ -58,7 +57,7 @@ class InvestorRegisterDtoTest {
                 .emailAddress("Tlotlananggmailcom")
                 .passWord("").build();
 
-        Set<ConstraintViolation<InvestorRegisterDto>> violations = validation.validate(investorRegisterDto);
+        Set<ConstraintViolation<InvestorRegisterEntity>> violations = validation.validate(investorRegisterEntity);
 
         List<String> failedProperties = violations.stream()
                 .map(violation -> violation.getPropertyPath().toString())

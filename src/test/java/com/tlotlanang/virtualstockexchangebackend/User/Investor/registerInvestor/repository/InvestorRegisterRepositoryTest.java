@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.Investor.repository;
+package com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.repository;
 
 import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.entity.InvestorRegisterEntity;
 import com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.repository.InvestorRegisterRepository;
