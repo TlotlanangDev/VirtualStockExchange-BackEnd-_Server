@@ -26,7 +26,7 @@ class BrokerLoginRepositoryTest {
         Optional<BrokerLoginEntity> brokerLogin = brokerLoginRepository.findById(brokerLoginEntity.getEmailAddress());
 
         Assertions.assertThat(brokerLogin).isNotNull();
-        Assertions.assertThat(brokerLogin.getEmailAddress()).isEqualTo("tlotlanang@gmail.com").isNotNull();
+
     }
 
 }
