@@ -1,13 +1,12 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.domain;
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingPending.domain;
 
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Builder
-public record TemporaryBoardDto(
+public record MainListingPendingDto(
         Integer id,
         @NotBlank(message = "Please Enter Company Name.")
         @Size(min = 2, max = 50, message = "Company companyName must be between 2 & 50 characters.")

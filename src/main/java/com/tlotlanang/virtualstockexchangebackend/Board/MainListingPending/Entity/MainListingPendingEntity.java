@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.Entity;
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingPending.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -8,16 +8,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 
 @Entity
-@Table(name = "TemporaryListingAcc")
+@Table(name = "mainlistingPendingAcc")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TemporaryBoardEntity {
+public class MainListingPendingEntity {
 
 
     @Id

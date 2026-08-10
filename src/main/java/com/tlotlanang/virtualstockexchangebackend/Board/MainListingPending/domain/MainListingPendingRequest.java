@@ -1,12 +1,11 @@
-package com.tlotlanang.virtualstockexchangebackend.Board.TemporaryBoard.domain;
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingPending.domain;
 
 import lombok.Builder;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Builder
-public record TemporaryBoardRequest(
+public record MainListingPendingRequest(
 
         Integer Id,
         String companyName,
