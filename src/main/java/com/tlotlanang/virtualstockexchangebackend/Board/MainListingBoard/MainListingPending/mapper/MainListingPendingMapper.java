@@ -1,0 +1,11 @@
+package com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.MainListingPending.mapper;
+
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.MainListingPending.Entity.MainListingPendingEntity;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.MainListingPending.domain.MainListingPendingDto;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.MainListingPending.domain.MainListingPendingRequest;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.MainListingPending.domain.MainListingPendingResponseDto;
+
+public interface MainListingPendingMapper {
+    MainListingPendingRequest fromDto(MainListingPendingDto mainListingPendingDto);
+    MainListingPendingResponseDto toDto(MainListingPendingEntity mainListingPendingEntity);
+}

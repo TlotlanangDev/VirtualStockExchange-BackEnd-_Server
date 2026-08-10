@@ -1,7 +1,7 @@
 package com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.listingDecision.service;
 
-import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.Entity.MainBoardEntity;
-import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.repository.MainBoardRepository;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.MainListingApproved.Entity.MainBoardEntity;
+import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.MainListingApproved.repository.MainBoardRepository;
 import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.listingDecision.entity.ListingDecisionEntity;
 import com.tlotlanang.virtualstockexchangebackend.User.InvestmentBanker.listingDecision.repository.ListingDecisionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
