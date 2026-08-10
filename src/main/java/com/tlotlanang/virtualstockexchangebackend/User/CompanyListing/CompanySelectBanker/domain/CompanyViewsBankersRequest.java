@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.domain;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.domain;
 
 public record CompanyViewsBankersRequest(
         String name,

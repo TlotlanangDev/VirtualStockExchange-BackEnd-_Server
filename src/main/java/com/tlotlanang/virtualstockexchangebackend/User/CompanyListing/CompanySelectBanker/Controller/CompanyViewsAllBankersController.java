@@ -1,9 +1,9 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.Controller;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.Controller;
 
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.domain.CompanyViewsBankersResponseDto;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.entity.CompanyViewsBankersEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.mapper.CompanyViewsBankersMapper;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.service.CompanyViewsBankersService;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.domain.CompanyViewsBankersResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.entity.CompanyViewsBankersEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.mapper.CompanyViewsBankersMapper;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.service.CompanyViewsBankersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.SlicedResourcesAssembler;

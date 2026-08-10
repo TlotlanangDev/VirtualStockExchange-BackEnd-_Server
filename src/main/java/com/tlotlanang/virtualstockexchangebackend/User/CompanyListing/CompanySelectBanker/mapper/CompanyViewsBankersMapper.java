@@ -1,0 +1,12 @@
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.mapper;
+
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.domain.CompanyViewsBankerDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.domain.CompanyViewsBankersRequest;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.domain.CompanyViewsBankersResponseDto;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.entity.CompanyViewsBankersEntity;
+
+public interface CompanyViewsBankersMapper {
+
+    CompanyViewsBankersRequest fromDto(CompanyViewsBankerDto companyViewsBankerDto);
+    CompanyViewsBankersResponseDto toDto(CompanyViewsBankersEntity companyViewsBankersEntity);
+}

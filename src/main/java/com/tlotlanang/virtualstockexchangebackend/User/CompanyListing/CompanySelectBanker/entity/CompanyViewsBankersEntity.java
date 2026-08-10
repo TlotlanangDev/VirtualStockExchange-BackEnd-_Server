@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.entity;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

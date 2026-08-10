@@ -1,7 +1,7 @@
-package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.repository;
+package com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.repository;
 
 import com.tlotlanang.virtualstockexchangebackend.Board.MainListingBoard.MainListingPending.Entity.MainListingPendingEntity;
-import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectbanker.entity.CompanyViewsBankersEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.CompanyListing.CompanySelectBanker.entity.CompanyViewsBankersEntity;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.jpa.repository.JpaRepository;
