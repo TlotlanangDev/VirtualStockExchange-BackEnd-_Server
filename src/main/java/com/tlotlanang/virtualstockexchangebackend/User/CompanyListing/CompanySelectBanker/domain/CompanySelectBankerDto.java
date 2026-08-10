@@ -9,10 +9,11 @@ import lombok.Builder;
 
 @Builder
 public record CompanySelectBankerDto(
-        @NotBlank(message = "Please Enter your Name.")
+
+        @NotBlank(message = "Please Enter Banker Name.")
         @Size(min = 2, max = 50, message = "name must be between 2 & 50 characters.")
         String name,
-        @NotBlank(message = "Please Enter your surName.")
+        @NotBlank(message = "Please Enter Banker surName.")
         @Size(min = 2, max = 50, message = "surname must be between 2 & 50 characters.")
         String surName,
         @Pattern(regexp = "^(\\+27|0)[1-9][0-9\\s\\-]{8,}$",

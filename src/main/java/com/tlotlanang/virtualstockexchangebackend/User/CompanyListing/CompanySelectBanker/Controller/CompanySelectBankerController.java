@@ -43,12 +43,14 @@ public class CompanySelectBankerController {
                     var bankerSelfLink = linkTo(methodOn(CompanySelectBankerController.class)
                             .selectBankerByEmail(companySelectBankerResponseDto.emailAddress()))
                             .withSelfRel();
+
                     return EntityModel.of(companySelectBankerResponseDto, bankerSelfLink);
                 });
 
-                    var bakerListcollectionSelfLink = linkTo(methodOn(CompanySelectBankerController.class)
+                    var bankerListcollectionSelfLink = linkTo(methodOn(CompanySelectBankerController.class)
                             .getListOfBankers(pageable)).withSelfRel();
-                    BankerLists.add(bakerListcollectionSelfLink);
+
+                    BankerLists.add(bankerListcollectionSelfLink);
 
 
         return ResponseEntity.ok(BankerLists);
@@ -56,15 +58,18 @@ public class CompanySelectBankerController {
 
 
     @GetMapping("/{emailAddress}")
-    public ResponseEntity<EntityModel<CompanySelectBankerResponseDto>>selectBankerByEmail(@PathVariable("emailAddress") String emailAddress)
+    public ResponseEntity<EntityModel<CompanySelectBankerResponseDto>>selectBankerByEmail(@PathVariable("emailAddress")
+                                                                                              String emailAddress)
         {
 
             var entity = companySelectBankerService.viewByEmail(emailAddress);
 
             CompanySelectBankerResponseDto companySelectBankerResponseDto = companySelectBankerMapper.toDto(entity);
 
-            var bankerSelfLink = linkTo(methodOn(CompanySelectBankerController.class).selectBankerByEmail(emailAddress)).withSelfRel();
-            EntityModel<CompanySelectBankerResponseDto> BankerResponseEntityModel = EntityModel.of(companySelectBankerResponseDto, bankerSelfLink);
+            var bankerSelfLink = linkTo(methodOn(CompanySelectBankerController.class)
+                    .selectBankerByEmail(emailAddress)).withSelfRel();
+            EntityModel<CompanySelectBankerResponseDto> BankerResponseEntityModel = EntityModel
+                    .of(companySelectBankerResponseDto, bankerSelfLink);
 
             return ResponseEntity.ok(BankerResponseEntityModel);
         }
