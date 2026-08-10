@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CompanyViewsBankersEntity{
+public class CompanySelectBankerEntity {
 
     @NotBlank(message = "Please Enter your Name.")
     @Size(min = 2, max = 50, message = "name must be between 2 & 50 characters.")

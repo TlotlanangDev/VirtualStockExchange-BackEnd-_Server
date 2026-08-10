@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Builder;
 
 @Builder
-public record CompanyViewsBankerDto (
+public record CompanySelectBankerDto(
         @NotBlank(message = "Please Enter your Name.")
         @Size(min = 2, max = 50, message = "name must be between 2 & 50 characters.")
         String name,
