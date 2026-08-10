@@ -1,4 +1,4 @@
-package com.tlotlanang.virtualstockexchangebackend.Trading;
+package com.tlotlanang.virtualstockexchangebackend.User;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
