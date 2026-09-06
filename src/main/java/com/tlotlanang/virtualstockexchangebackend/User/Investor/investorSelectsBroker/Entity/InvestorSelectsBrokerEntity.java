@@ -1,6 +1,7 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.Entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -28,6 +29,7 @@ public class InvestorSelectsBrokerEntity {
     @Pattern(regexp = "^(\\+27|0)[1-9][0-9\\s\\-]{8,}$",
             message = "Please Enter Correct Phone Number")
     private String phoneNumber;
+    @Id
     @Size(min = 5, max = 50, message = "Email Address must be between 5 & 50 characters.")
     @Email(message = "Broker Email Address not valid.")
     @NotBlank(message = "Broker Email address cannot be null.")

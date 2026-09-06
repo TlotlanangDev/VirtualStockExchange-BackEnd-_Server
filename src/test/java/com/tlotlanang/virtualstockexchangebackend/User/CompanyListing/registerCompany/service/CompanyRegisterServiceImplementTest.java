@@ -65,8 +65,8 @@ class CompanyRegisterServiceImplementTest {
         Assertions.assertThat(savedRepository.getTelePhone()).isEqualTo("0787060708").isNotNull();
         Assertions.assertThat(savedRepository.getEmailAddress()).isEqualTo("Tlotlanang@gmail.com").isNotNull();
         Assertions.assertThat(savedRepository.getPassWord()).isEqualTo("ergdg43gr").isNotNull();
-        Assertions.assertThat(savedRepository.getStockShare()).isEqualTo(null).isNull();
-        Assertions.assertThat(savedRepository.getPricePerShare()).isEqualTo(null).isNull();
+        Assertions.assertThat(savedRepository.getStockShare()).isNull();
+        Assertions.assertThat(savedRepository.getPricePerShare()).isNull();
 
     }
 

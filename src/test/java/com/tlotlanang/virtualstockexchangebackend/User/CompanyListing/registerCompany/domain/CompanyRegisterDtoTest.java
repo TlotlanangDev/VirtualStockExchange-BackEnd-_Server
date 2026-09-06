@@ -25,14 +25,15 @@ class CompanyRegisterDtoTest {
     public void setCompanyDto_passValidInfo_returnDataPassed(){
         CompanyRegisterDto companyRegisterDto = CompanyRegisterDto.builder()
 
-                .companyName("Tlotlanang")
-                .registrationNumber("Gabonewe")
-                .registrationDate(LocalDate.of(2002,9,1))
-                .telePhone("0787058697")
-                .emailAddress("Tlotlanang@gmail.com")
-                .passWord("ergdg43gr")
+                .companyName("TMG Group")
+                .registrationNumber("2012/968795/07")
+                .registrationDate(LocalDate.of(2012, 9, 7))
+                .telePhone("0787041819")
+                .emailAddress("tlotlanang@gmail.com")
+                .passWord("weegbdbdbdfgsg")
                 .stockShare(null)
-                .pricePerShare(null).build();
+                .pricePerShare(null)
+                .build();
 
         Set<ConstraintViolation<CompanyRegisterDto>> violations = validation.validate(companyRegisterDto);
 
@@ -68,14 +69,12 @@ class CompanyRegisterDtoTest {
 
         Assertions.assertThat(violations).isNotEmpty();
         Assertions.assertThat(failedProperties).contains(
-                "name",
+                "companyName",
                 "registrationNumber",
                 "registrationDate",
                 "telePhone",
                 "emailAddress",
-                "passWord",
-                "stockShare",
-                "pricePerShare");
+                "passWord");
 
 
     }

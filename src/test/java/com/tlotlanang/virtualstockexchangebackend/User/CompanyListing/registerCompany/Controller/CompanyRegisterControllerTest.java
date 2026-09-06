@@ -49,31 +49,31 @@ class CompanyRegisterControllerTest {
     void CompanyController_createUser_ReturnCreatedStatus() throws Exception {
 
         CompanyRegisterDto companyRegisterDto = CompanyRegisterDto.builder()
-                .companyName("Tlotlanang")
-                .registrationNumber("Gabonewe")
-                .registrationDate(LocalDate.of(2002, 9, 1))
-                .telePhone("0787060708")
-                .emailAddress("Tlotlanang@gmail.com")
-                .passWord("ergdg43gr")
-                .stockShare(800)
-                .pricePerShare(BigDecimal.valueOf(200.0))
+                .companyName("TMG Group")
+                .registrationNumber("2012/968795/07")
+                .registrationDate(LocalDate.of(2012, 9, 7))
+                .telePhone("0787041819")
+                .emailAddress("tlotlanang@gmail.com")
+                .passWord("weegbdbdbdfgsg")
+                .stockShare(null)
+                .pricePerShare(null)
                 .build();
 
         CompanyRegisterResponseDto expectedResponse = CompanyRegisterResponseDto.builder()
-                .companyName("Tlotlanang")
-                .registrationNumber("Gabonewe")
-                .registrationDate(LocalDate.of(2004,9,6))
-                .telePhone("0786959588")
-                .emailAddress("fdgdg")
-                .stockShare(800)
-                .pricePerShare(BigDecimal.valueOf(200.0))
+                .companyName("TMG Group")
+                .registrationNumber("2019/968795/07")
+                .registrationDate(LocalDate.of(2012,9,7))
+                .telePhone("0787041819")
+                .emailAddress("Tlotlanang@gmail.com")
+                .stockShare(null)
+                .pricePerShare(null)
                 .build();
 
         given(companyRegisterMapper.fromDto(ArgumentMatchers.any(CompanyRegisterDto.class)))
-                .willReturn(new CompanyRegisterRequest(null, "TMG Group",
-                        "2012/968795/07",
-                        LocalDate.of(2004,9,3), "0787041819",
-                        "tlotlanang@gmail.com","weegsg", null,null));
+                .willReturn(new CompanyRegisterRequest(null, "TMGG",
+                        "20127",
+                        LocalDate.of(2012,9,7), "0041819",
+                        "gmail.com","wgsg", null,null));
 
         given(companyServiceImplement.createUser(ArgumentMatchers.any(CompanyRegisterRequest.class)))
                 .willReturn(new CompanyRegisterEntity());

@@ -1,7 +1,7 @@
 package com.tlotlanang.virtualstockexchangebackend.globalExceptionHandler;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerEmailPassExceptionDetails;
-import com.tlotlanang.virtualstockexchangebackend.globalExceptionHandler.exception.EmailPassException;
+//import com.tlotlanang.virtualstockexchangebackend.User.Broker.domain.BrokerEmailPassExceptionDetails;
+//import com.tlotlanang.virtualstockexchangebackend.globalExceptionHandler.exception.EmailPassException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -34,12 +34,14 @@ public class DataValidationExceptionHandler {
         ErrorMap.put("HTTP request error", "Incoming HTTP request body cannot be read.");
         return ErrorMap;
     }
-
+/*
     @ExceptionHandler(EmailPassException.class)
     public ResponseEntity<Object> handlePasEmailMissmatch(EmailPassException exception, WebRequest webRequest) {
 
         return new ResponseEntity<>(new BrokerEmailPassExceptionDetails(exception.getMessage()), HttpStatus.NOT_FOUND);
 
     }
+
+ */
 
 }

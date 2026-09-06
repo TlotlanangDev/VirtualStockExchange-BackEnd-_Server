@@ -27,9 +27,9 @@ class CompanyRegisterRepositoryTest {
                 .companyName("TMG Group")
                 .registrationNumber("2012/968795/07")
                 .registrationDate(LocalDate.of(2012,9,1))
-                .telePhone("01178574873")
+                .telePhone("0785748736")
                 .emailAddress("tlotlanang@gmail.com")
-                .passWord("vsvsvs")
+                .passWord("vsvs53tew4ttvs")
                 .pricePerShare(null)
                 .stockShare(null).build();
 
@@ -41,11 +41,11 @@ class CompanyRegisterRepositoryTest {
         Assertions.assertThat(savedToEntity.getCompanyName()).isEqualTo("TMG Group").isNotNull();
         Assertions.assertThat(savedToEntity.getRegistrationNumber()).isEqualTo("2012/968795/07").isNotNull();
         Assertions.assertThat(savedToEntity.getRegistrationDate()).isEqualTo(LocalDate.of(2012,9,1)).isNotNull();
-        Assertions.assertThat(savedToEntity.getTelePhone()).isEqualTo("01178574873").isNotNull();
-        Assertions.assertThat(savedToEntity.getEmailAddress()).isEqualTo("Tlotlanang@gmail.com").isNotNull();
-        Assertions.assertThat(savedToEntity.getPassWord()).isEqualTo("vsvsvs").isNotNull();
-        Assertions.assertThat(savedToEntity.getPricePerShare()).isEqualTo(null).isNull();
-        Assertions.assertThat(savedToEntity.getStockShare()).isEqualTo(null).isNull();
+        Assertions.assertThat(savedToEntity.getTelePhone()).isEqualTo("0785748736").isNotNull();
+        Assertions.assertThat(savedToEntity.getEmailAddress()).isEqualTo("tlotlanang@gmail.com").isNotNull();
+        Assertions.assertThat(savedToEntity.getPassWord()).isEqualTo("vsvs53tew4ttvs").isNotNull();
+        Assertions.assertThat(savedToEntity.getPricePerShare()).isNull();
+        Assertions.assertThat(savedToEntity.getStockShare()).isNull();
 
     }
 
