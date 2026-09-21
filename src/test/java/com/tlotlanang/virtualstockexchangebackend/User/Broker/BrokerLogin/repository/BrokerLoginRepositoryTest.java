@@ -27,6 +27,7 @@ class BrokerLoginRepositoryTest {
 
         Assertions.assertThat(brokerLogin).isNotNull();
 
+
     }
 
 }
