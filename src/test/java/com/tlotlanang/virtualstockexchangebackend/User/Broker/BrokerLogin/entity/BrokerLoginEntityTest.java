@@ -38,8 +38,8 @@ class BrokerLoginEntityTest {
     public void setBrokerLoginEntity_passInValidInfo_ReturnDataPassed(){
 
         BrokerLoginEntity brokerLoginEntity = BrokerLoginEntity.builder()
-                .emailAddress("tlotlananggabonewe@gmail.com")
-                .passWord("f7esfuf2fuwi").build();
+                .emailAddress("tlotlananggabonewegmailcom")
+                .passWord("fui").build();
 
         Set<ConstraintViolation<BrokerLoginEntity>>violations = validation.validate(brokerLoginEntity);
 
