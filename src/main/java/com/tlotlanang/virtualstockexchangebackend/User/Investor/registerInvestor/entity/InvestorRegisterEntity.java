@@ -1,14 +1,12 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Investor.registerInvestor.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDate;
@@ -43,6 +41,11 @@ public class InvestorRegisterEntity {
         private String emailAddress;
         @Size(min = 8, max = 40, message = "Passowrd should have at least 8 characters.")
         @NotBlank(message = "passWord cannot be Empty..")
+        @Column(name = "passWord", columnDefinition = "varbinary(255)")
+        @ColumnTransformer(
+                read = "trim(trailing u&'\\0000' from cast(decrypt('AES', '00', passWord) as varchar))",
+                write = "encrypt('AES', '00', ?)"
+        )
         private String passWord;
 
 }
