@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnTransformer;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -41,7 +42,13 @@ public class CompanyRegisterEntity {
         private String emailAddress;
         @Size(min = 8, max = 40, message = "Passowrd should have at least 8 characters.")
         @NotBlank(message = "passWord cannot be Empty..")
+        @Column(name = "passWord", columnDefinition = "varbinary(255)")
+        @ColumnTransformer(
+                read = "trim(trailing u&'\\0000' from cast(decrypt('AES', '00', passWord) as varchar))",
+                write = "encrypt('AES', '00', ?)"
+        )
         private String passWord;
+
         @Null
         private Integer stockShare;
         @Null
