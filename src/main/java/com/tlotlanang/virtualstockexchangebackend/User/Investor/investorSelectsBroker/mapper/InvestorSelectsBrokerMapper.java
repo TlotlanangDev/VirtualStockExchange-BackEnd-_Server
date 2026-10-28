@@ -1,6 +1,6 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.mapper;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.Entity.InvestorSelectsBrokerEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.Entity.Investor;
 import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.domain.InvestorSelectsBrokerDto;
 import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.domain.InvestorSelectsBrokerRequest;
 import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.domain.InvestorSelectsBrokerResponse;
@@ -8,5 +8,5 @@ import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsB
 public interface InvestorSelectsBrokerMapper {
 
     InvestorSelectsBrokerRequest fromDto(InvestorSelectsBrokerDto investorSelectsBrokerDto);
-    InvestorSelectsBrokerResponse toDto(InvestorSelectsBrokerEntity investorSelectsBrokerEntity);
+    InvestorSelectsBrokerResponse toDto(Investor investor);
 }

@@ -12,7 +12,7 @@ import org.hibernate.annotations.UuidGenerator;
 import java.time.LocalDate;
 import java.util.UUID;
 
-@Entity
+@Entity(name = "InvestorRegisterEntity")
 @Table(name = "InvestorAccount")
 @Data
 @Builder

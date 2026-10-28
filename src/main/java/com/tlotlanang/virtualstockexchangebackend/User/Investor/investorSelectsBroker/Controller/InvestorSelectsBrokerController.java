@@ -1,6 +1,6 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.Controller;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.Entity.InvestorSelectsBrokerEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.Entity.Investor;
 import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.domain.InvestorSelectsBrokerResponse;
 import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.mapper.InvestorSelectsBrokerMapper;
 import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.service.InvestorSelectsBrokerService;
@@ -29,7 +29,7 @@ public class InvestorSelectsBrokerController {
     private InvestorSelectsBrokerMapper investorSelectsBrokerMapper;
 
     @Autowired
-    private SlicedResourcesAssembler<InvestorSelectsBrokerEntity> slicedAssembler;
+    private SlicedResourcesAssembler<Investor> slicedAssembler;
 
     @GetMapping
     public ResponseEntity<SlicedModel<EntityModel<InvestorSelectsBrokerResponse>>>getBrokerList(Pageable pageable){

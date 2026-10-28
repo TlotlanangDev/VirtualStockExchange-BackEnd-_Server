@@ -1,13 +1,13 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.repository;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.Entity.InvestorSelectsBrokerEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.Entity.Investor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface InvestorSelectsBrokerRepository extends JpaRepository<InvestorSelectsBrokerEntity, String> {
+public interface InvestorSelectsBrokerRepository extends JpaRepository<Investor, String> {
 
-    Slice<InvestorSelectsBrokerEntity>findBy(Pageable pageable);
+    Slice<Investor>findBy(Pageable pageable);
 }

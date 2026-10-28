@@ -1,6 +1,6 @@
 package com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.service;
 
-import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.Entity.InvestorSelectsBrokerEntity;
+import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.Entity.Investor;
 import com.tlotlanang.virtualstockexchangebackend.User.Investor.investorSelectsBroker.repository.InvestorSelectsBrokerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -16,12 +16,12 @@ public class InvestorSelectsBrokerServiceImpl implements InvestorSelectsBrokerSe
     private InvestorSelectsBrokerRepository investorSelectsBrokerRepository;
 
     @Override
-    public Slice<InvestorSelectsBrokerEntity> getBrokersList(Pageable pageable) {
+    public Slice<Investor> getBrokersList(Pageable pageable) {
         return investorSelectsBrokerRepository.findAll(pageable);
     }
 
     @Override
-    public InvestorSelectsBrokerEntity viewByEmail(String emailAddress) {
+    public Investor viewByEmail(String emailAddress) {
         return investorSelectsBrokerRepository.findById(emailAddress).orElseThrow(() -> new ResponseStatusException(
                 HttpStatus.NOT_FOUND, "Banker not found with Email Address: " + emailAddress));
     }
